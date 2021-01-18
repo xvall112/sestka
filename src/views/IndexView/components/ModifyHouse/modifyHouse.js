@@ -2,7 +2,9 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Grid, Typography } from '@material-ui/core';
+
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { Grid, Typography, useMediaQuery } from '@material-ui/core';
 import { SectionHeader, OverlapedImages } from 'components/molecules';
 
 const query = graphql`
@@ -21,9 +23,14 @@ const ModifyHouse = props => {
   const data = useStaticQuery(query);
   const { className, ...rest } = props;
 
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+    defaultMatches: true,
+  });
+
   return (
     <div className={className} {...rest}>
-      <Grid container spacing={4}>
+      <Grid container direction={isMd ? 'row' : 'column-reverse'} spacing={4}>
         <Grid item xs={12} md={6}>
           <SectionHeader
             label="EXTERIÉR"

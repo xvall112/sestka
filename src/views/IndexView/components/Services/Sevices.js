@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -111,6 +111,7 @@ const query = graphql`
   {
     allContentfulRdHouse(sort: { fields: name }) {
       nodes {
+        slug
         name
         plochaParcely
         introImages {
@@ -266,13 +267,15 @@ const Services = ({ className, ...rest }) => {
                     </Grid>
                     <Divider className={classes.divider} />
                     <Grid item container justify="center" xs={12}>
-                      <Button
-                        variant="outlined"
-                        color="primary"
-                        disabled={item.stav.stav === 'prodáno' ? true : false}
-                      >
-                        Vstoupit do {item.name}
-                      </Button>
+                      <Link to={`/dum/${item.slug}`}>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          disabled={item.stav.stav === 'prodáno' ? true : false}
+                        >
+                          Vstoupit do {item.name}
+                        </Button>
+                      </Link>
                     </Grid>
                   </Grid>
                 }

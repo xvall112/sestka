@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { Contact } from './components';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Divider } from '@material-ui/core';
 import { Topbar, Footer, Sidebar } from './components';
 import Header from './components/header/header';
+import { SectionAlternate } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -343,6 +345,9 @@ const Main = props => {
         <Divider />
         {children}
       </main>
+      <SectionAlternate>
+        <Contact />
+      </SectionAlternate>
       <Footer pages={pages} />
     </div>
   );

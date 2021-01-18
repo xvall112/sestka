@@ -9,8 +9,6 @@ import {
   SellProperty,
   AboutMiddle,
   PromoNumbers,
-  Form,
-  Contact,
   ModifyInterior,
   ModifyHouse,
 } from './components';
@@ -57,11 +55,11 @@ const IndexView = () => {
       <Section className={classes.sectionNoPaddingTop}>
         <ModifyInterior />
       </Section>
-      <Services />
-      <SellProperty />
       <Section>
         <Features data={features} />
       </Section>
+      <SellProperty />
+      <Services />
       <AboutMiddle />
       <Section className={classes.dividerSection}>
         <Divider />
@@ -69,10 +67,6 @@ const IndexView = () => {
       <Section narrow>
         <GetStarted />
       </Section>
-      <SectionAlternate>
-        <Form />
-      </SectionAlternate>
-      <Contact />
     </div>
   );
 };

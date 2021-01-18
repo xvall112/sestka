@@ -33,6 +33,7 @@
     ]
   },
   "dependencies": {
+    "@fontsource/dm-sans": "^4.1.0",
     "@material-ui/core": "^4.2.1",
     "@material-ui/icons": "^4.2.1",
     "@material-ui/lab": "^4.0.0-alpha.39",

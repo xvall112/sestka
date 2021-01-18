@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
   featureItems: {
     width: '100%',
     height: '100%',
-    background: 'url(https://assets.maccarianagency.com/the-front/illustrations/bg-shapes.svg) no-repeat top center',
+    background:
+      'url(https://assets.maccarianagency.com/the-front/illustrations/bg-shapes.svg) no-repeat top center',
     backgroundSize: 'contain',
 
     [theme.breakpoints.up('md')]: {
@@ -42,12 +43,13 @@ const useStyles = makeStyles(theme => ({
   iconCover: {
     width: 60,
     height: 60,
-    background: 'url(https://assets.maccarianagency.com/the-front/illustrations/bgicon.svg) no-repeat center center',
+    background:
+      'url(https://assets.maccarianagency.com/the-front/illustrations/bgicon.svg) no-repeat center center',
     backgroundSize: 'contain',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: colors.indigo[500],
+    color: colors.red[500],
     fontSize: 35,
     [theme.breakpoints.up('md')]: {
       width: 80,
@@ -85,7 +87,9 @@ const Features = props => {
                         <DescriptionListIcon
                           icon={
                             <div className={classes.iconCover}>
-                              <NoSsr><i className={item.icon} /></NoSsr>
+                              <NoSsr>
+                                <i className={item.icon} />
+                              </NoSsr>
                             </div>
                           }
                           title={item.title}
@@ -106,7 +110,9 @@ const Features = props => {
                           <DescriptionListIcon
                             icon={
                               <div className={classes.iconCover}>
-                                <NoSsr><i className={item.icon} /></NoSsr>
+                                <NoSsr>
+                                  <i className={item.icon} />
+                                </NoSsr>
                               </div>
                             }
                             title={item.title}

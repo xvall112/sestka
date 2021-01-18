@@ -6,7 +6,5 @@ export { default as SellProperty } from './SellProperty';
 export { default as AboutMiddle } from './AboutMiddle';
 export { default as PromoNumbers } from './PromoNumbers';
 export { default as SwiperImage } from './SwiperImage';
-export { default as Form } from './Form';
-export { default as Contact } from './Contact';
 export { default as ModifyInterior } from './ModifyInterior';
 export { default as ModifyHouse } from './ModifyHouse';
