@@ -3,6 +3,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Section, SectionAlternate } from 'components/organisms';
 import { Info, Hero } from './components';
+import Layout from '../../layouts/Main';
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,7 +20,7 @@ export const query = graphql`
       garaz
       introImages {
         fluid {
-          src
+          ...GatsbyContentfulFluid
         }
       }
       konstrukce
@@ -30,7 +31,7 @@ export const query = graphql`
       objekt
       obrazky {
         fluid {
-          src
+          ...GatsbyContentfulFluid
         }
       }
       plochaParcely
@@ -62,10 +63,12 @@ export const query = graphql`
 const House = props => {
   return (
     <div>
-      <Hero />
-      <Section>
-        <Info data={props} />
-      </Section>
+      <Layout>
+        <Hero data={props} />
+        <Section>
+          <Info data={props} />
+        </Section>
+      </Layout>
     </div>
   );
 };

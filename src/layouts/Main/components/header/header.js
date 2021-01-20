@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import SideMenu from './sideMenu';
 import Img from 'gatsby-image';
 
@@ -46,8 +46,9 @@ const Header = () => {
               justify="space-between"
               alignItems="center"
             >
-              <Img fixed={data.logoImage.childImageSharp.fixed} />
-
+              <Link to="/" className={classes.link}>
+                <Img fixed={data.logoImage.childImageSharp.fixed} />
+              </Link>
               <Grid item>
                 <Box display={{ xs: 'none', sm: 'inline' }}>
                   <Button
@@ -88,6 +89,10 @@ const Header = () => {
   );
 };
 const useStyles = makeStyles(theme => ({
+  link: {
+    padding: 0,
+    margin: 0,
+  },
   button: {
     color: 'white',
     borderColor: 'white',

@@ -89,31 +89,31 @@ const Service = () => {
     <div className={classes.root}>
       <Section className={classes.pagePaddingTop}>
         <>
-        <About data={partners} />
-        <Section>
-          <Divider />
-        </Section>
-        <VideoSection />
-        <Section>
-          <Divider />
-        </Section>
-        <Advantages data={advantages} />
-        <Section>
-          <Divider />
-        </Section>
-        <Reviews data={reviews} />
-        <Section>
-          <Divider />
-        </Section>
-        <Integrations data={integrations} />
-        <Section>
-          <Divider />
-        </Section>
-        <Features data={customizations} />
-        <Section>
-          <Divider />
-        </Section>
-        <Team data={team} />
+          <About data={partners} />
+          <Section>
+            <Divider />
+          </Section>
+          <VideoSection />
+          <Section>
+            <Divider />
+          </Section>
+          <Advantages data={advantages} />
+          <Section>
+            <Divider />
+          </Section>
+          <Reviews data={reviews} />
+          <Section>
+            <Divider />
+          </Section>
+          <Integrations data={integrations} />
+          <Section>
+            <Divider />
+          </Section>
+          <Features data={customizations} />
+          <Section>
+            <Divider />
+          </Section>
+          <Team data={team} />
         </>
       </Section>
       <Divider />

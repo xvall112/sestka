@@ -3,15 +3,19 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    position: 'absolute',
+    position: 'relative',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
     width: '100%',
-    height: '100%',
+    height: '50vh',
+    [theme.breakpoints.up('md')]: {
+      width: '100%',
+      height: '100%',
+    },
   },
 }));
 

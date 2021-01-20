@@ -110,17 +110,19 @@ const useStyles = makeStyles(theme => ({
 const query = graphql`
   {
     allContentfulRdHouse(sort: { fields: name }) {
-      nodes {
-        slug
-        name
-        plochaParcely
-        introImages {
-          fluid {
-            ...GatsbyContentfulFluid
+      edges {
+        node {
+          slug
+          name
+          plochaParcely
+          introImages {
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid
+            }
           }
-        }
-        stav {
-          stav
+          stav {
+            stav
+          }
         }
       }
     }
@@ -163,7 +165,7 @@ const Services = ({ className, ...rest }) => {
       </Section>
       <Section className={classes.noPaddingTop}>
         <Grid container spacing={2}>
-          {data.allContentfulRdHouse.nodes.map((item, index) => (
+          {data.allContentfulRdHouse.edges.map((item, index) => (
             <Grid key={index} item xs={12} sm={12} md={4} data-aos="fade-up">
               <CardProduct
                 withShadow
@@ -172,21 +174,21 @@ const Services = ({ className, ...rest }) => {
                   <>
                     <SwiperImage
                       navigationButtonStyle={classes.swiperNavButton}
-                      items={item.introImages}
+                      items={item.node.introImages}
                       imageClassName={classes.image}
                     />
                     <div className={classes.locationCardPrice}>
                       <Typography
                         variant="body1"
                         className={
-                          item.stav.stav === 'volné'
+                          item.node.stav.stav === 'volné'
                             ? classes.stavVolne
-                            : item.stav.stav === 'prodáno'
+                            : item.node.stav.stav === 'prodáno'
                             ? classes.stavProdano
                             : classes.stavRezervovano
                         }
                       >
-                        {item.stav.stav}
+                        {item.node.stav.stav}
                       </Typography>
                     </div>
                   </>
@@ -200,7 +202,7 @@ const Services = ({ className, ...rest }) => {
                         align="left"
                         className={classes.fontWeight700}
                       >
-                        {item.name}
+                        {item.node.name}
                       </Typography>
                     </Grid>
                     <Grid item xs={12}>
@@ -231,7 +233,7 @@ const Services = ({ className, ...rest }) => {
                               </NoSsr>
                             </ListItemIcon>
                             <ListItemText
-                              primary={`${item.plochaParcely} ㎡`}
+                              primary={`${item.node.plochaParcely} ㎡`}
                             />
                           </ListItem>
                         </List>
@@ -267,13 +269,15 @@ const Services = ({ className, ...rest }) => {
                     </Grid>
                     <Divider className={classes.divider} />
                     <Grid item container justify="center" xs={12}>
-                      <Link to={`/dum/${item.slug}`}>
+                      <Link to={`/dum/${item.node.slug}`}>
                         <Button
                           variant="contained"
                           color="primary"
-                          disabled={item.stav.stav === 'prodáno' ? true : false}
+                          disabled={
+                            item.node.stav.stav === 'prodáno' ? true : false
+                          }
                         >
-                          Vstoupit do {item.name}
+                          Vstoupit do {item.node.name}
                         </Button>
                       </Link>
                     </Grid>

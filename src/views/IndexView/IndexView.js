@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Divider, colors } from '@material-ui/core';
+import { makeStyles, Divider, colors, Box, Grid } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import {
   GetStarted,
@@ -37,18 +37,10 @@ const IndexView = () => {
 
   return (
     <div>
-      <div className={classes.shape}>
-        <Section className={classes.pagePaddingTop}>
-          <Hero />
-        </Section>
-        <Section className={classes.sectionNoPaddingTop}>
-          <PromoNumbers data={promoNumbers} />
-        </Section>
-
-        {/*  <Section className={classes.sectionNoPaddingTop}>
-          <Hub />
-        </Section> */}
-      </div>
+      <Hero />
+      <SectionAlternate className={classes.sectionNoPaddingTop}>
+        <PromoNumbers data={promoNumbers} />
+      </SectionAlternate>
       <Section>
         <ModifyHouse />
       </Section>

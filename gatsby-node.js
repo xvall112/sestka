@@ -5,22 +5,24 @@ const fse = require('fs-extra');
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   //create page for Workshop
-  const rdHouseTemplate = path.resolve('./src/templates/RdHouse');
+  const rdHouseTemplate = path.resolve('./src/template/RdHouse/House.js');
   const res = await graphql(`
     query rdHouse {
       allContentfulRdHouse {
-        nodes {
-          slug
+        edges {
+          node {
+            slug
+          }
         }
       }
     }
   `);
-  res.data.allContentfulRdHouse.nodes.forEach(node => {
+  res.data.allContentfulRdHouse.edges.forEach(edge => {
     createPage({
       component: rdHouseTemplate,
-      path: `/dum/${node.slug}`,
+      path: `/dum/${edge.node.slug}`,
       context: {
-        slug: node.slug,
+        slug: edge.node.slug,
       },
     });
   });
