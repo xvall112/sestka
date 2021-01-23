@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 import clsx from 'clsx';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
@@ -10,11 +12,29 @@ import {
   ListItem,
 } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import PinterestIcon from '@material-ui/icons/Pinterest';
+import { contact } from '../../../../views/IndexView/data/index';
 
-import { Image } from 'components/atoms';
+const query = graphql`
+  query {
+    house: allContentfulRdHouse(sort: { fields: name }) {
+      nodes {
+        name
+        slug
+        stav {
+          stav
+        }
+      }
+    }
+    logoImage: file(relativePath: { eq: "logo2.png" }) {
+      childImageSharp {
+        fixed(width: 80) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(12, 0),
     },
-    background: theme.palette.background.footer,
+    background: theme.palette.primary.dark,
   },
   footerContainer: {
     maxWidth: theme.layout.contentWidth,
@@ -95,33 +115,31 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Footer = props => {
+  const data = useStaticQuery(query);
   const { pages, className, ...rest } = props;
 
   const classes = useStyles();
 
   const landings = pages.landings;
-  const supportedPages = pages.pages;
-  const account = pages.account;
 
   const MenuGroup = props => {
-    const { item } = props;
     return (
       <List disablePadding className={classes.menuItem}>
         <ListItem disableGutters className={classes.menuGroupItem}>
           <Typography variant="body2" className={classes.menuGroupTitle}>
-            {item.groupTitle}
+            RODINNÉ DOMY
           </Typography>
         </ListItem>
-        {item.pages.map((page, i) => (
+        {data.house.nodes.map((page, i) => (
           <ListItem disableGutters key={i} className={classes.menuGroupItem}>
-            <Typography
-              variant="body2"
-              component={'a'}
-              href={page.href}
-              className={clsx(classes.navLink, 'submenu-item')}
-            >
-              {page.title}
-            </Typography>
+            <Link to={`/dum/${page.slug}`}>
+              <Typography
+                variant="body2"
+                className={clsx(classes.navLink, 'submenu-item')}
+              >
+                {page.name}
+              </Typography>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -129,59 +147,11 @@ const Footer = props => {
   };
 
   const LandingPages = () => {
-    const { services, apps, web } = landings.children;
+    const { services } = landings.children;
     return (
       <div className={classes.menu}>
         <div>
           <MenuGroup item={services} />
-          <MenuGroup item={apps} />
-        </div>
-        <div>
-          <MenuGroup item={web} />
-        </div>
-      </div>
-    );
-  };
-
-  const SupportedPages = () => {
-    const {
-      career,
-      helpCenter,
-      company,
-      contact,
-      blog,
-      portfolio,
-    } = supportedPages.children;
-    return (
-      <div className={classes.menu}>
-        <div>
-          <MenuGroup item={career} />
-          <MenuGroup item={helpCenter} />
-        </div>
-        <div>
-          <MenuGroup item={company} />
-          <MenuGroup item={contact} />
-        </div>
-        <div>
-          <MenuGroup item={blog} />
-          <MenuGroup item={portfolio} />
-        </div>
-      </div>
-    );
-  };
-
-  const AccountPages = () => {
-    const { settings, signup, signin, password, error } = account.children;
-    return (
-      <div className={classes.menu}>
-        <div>
-          <MenuGroup item={settings} />
-          <MenuGroup item={signup} />
-        </div>
-        <div>
-          <MenuGroup item={signin} />
-          <MenuGroup item={password} />
-          <MenuGroup item={error} />
         </div>
       </div>
     );
@@ -195,28 +165,26 @@ const Footer = props => {
             <List disablePadding>
               <ListItem disableGutters className={classes.logoContainerItem}>
                 <div className={classes.logoContainer}>
-                  <a href="/" title="thefront">
-                    <Image
+                  <Link to="/" className={classes.link}>
+                    <Img
+                      fixed={data.logoImage.childImageSharp.fixed}
                       className={classes.logoImage}
-                      src="https://assets.maccarianagency.com/the-front/logos/logo-negative.svg"
-                      alt="thefront"
-                      lazy={false}
                     />
-                  </a>
+                  </Link>
                 </div>
               </ListItem>
               <ListItem disableGutters>
-                <IconButton className={classes.socialIcon}>
+                <IconButton
+                  className={classes.socialIcon}
+                  href={contact.facebook}
+                >
                   <FacebookIcon className={classes.icon} />
                 </IconButton>
-                <IconButton className={classes.socialIcon}>
+                <IconButton
+                  className={classes.socialIcon}
+                  href={contact.instagram}
+                >
                   <InstagramIcon className={classes.icon} />
-                </IconButton>
-                <IconButton className={classes.socialIcon}>
-                  <TwitterIcon className={classes.icon} />
-                </IconButton>
-                <IconButton className={classes.socialIcon}>
-                  <PinterestIcon className={classes.icon} />
                 </IconButton>
               </ListItem>
             </List>
@@ -225,12 +193,6 @@ const Footer = props => {
             <Grid container spacing={0}>
               <Grid item>
                 <LandingPages />
-              </Grid>
-              <Grid item>
-                <SupportedPages />
-              </Grid>
-              <Grid item>
-                <AccountPages />
               </Grid>
             </Grid>
           </Grid>

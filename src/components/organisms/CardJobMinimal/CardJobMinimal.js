@@ -109,31 +109,4 @@ CardJobMinimal.defaultProps = {
   subtitleProps: {},
 };
 
-CardJobMinimal.propTypes = {
-  /**
-   * External classes
-   */
-  className: PropTypes.string,
-  /**
-   * Job title of the card
-   */
-  title: PropTypes.string.isRequired,
-  /**
-   * Job subtitle of the card
-   */
-  subtitle: PropTypes.string.isRequired,
-  /**
-   * Should show arrow or not
-   */
-  showArrow: PropTypes.bool,
-  /**
-   * Additional props to pass to the title Typography component
-   */
-  titleProps: PropTypes.object,
-  /**
-   * Additional props to pass to the subtitle Typography component
-   */
-  subtitleProps: PropTypes.object,
-};
-
 export default CardJobMinimal;

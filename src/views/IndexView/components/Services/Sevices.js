@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { SwiperImage } from '../../components';
+import SwiperImage from '../SwiperImage/SwiperImage';
 import {
   useMediaQuery,
   Grid,
@@ -108,8 +108,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const query = graphql`
-  {
-    allContentfulRdHouse(sort: { fields: name }) {
+  query {
+    house: allContentfulRdHouse(sort: { fields: name }) {
       edges {
         node {
           slug
@@ -139,15 +139,14 @@ const Services = ({ className, ...rest }) => {
 
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
-      Build accessible React apps&nbsp;
+      Na výběr máte z šesti domů{' '}
       <Typography component="span" variant="inherit" color="primary">
-        with speed
+        "ŠESTKA"
       </Typography>
     </Typography>
   );
 
-  const subtitle =
-    'Build a beautiful, modern website with flexible, fully customizable, atomic Material UI components.';
+  const subtitle = '';
 
   return (
     <div className={className} {...rest}>
@@ -165,10 +164,9 @@ const Services = ({ className, ...rest }) => {
       </Section>
       <Section className={classes.noPaddingTop}>
         <Grid container spacing={2}>
-          {data.allContentfulRdHouse.edges.map((item, index) => (
+          {data.house.edges.map((item, index) => (
             <Grid key={index} item xs={12} sm={12} md={4} data-aos="fade-up">
               <CardProduct
-                withShadow
                 liftUp
                 mediaContent={
                   <>

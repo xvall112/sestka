@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,6 +54,7 @@ const Map = props => {
   const ReactMap = require('react-leaflet').Map;
   const TileLayer = require('react-leaflet').TileLayer;
   const Marker = require('react-leaflet').Marker;
+  const Tooltip = require('react-leaflet').Tooltip;
 
   return (
     <ReactMap
@@ -74,14 +76,16 @@ const Map = props => {
             className="map__marker"
             position={[item.location.y, item.location.x]}
             key={i}
-          />
+          >
+            <Tooltip>{item.popup}</Tooltip>
+          </Marker>
         ))}
     </ReactMap>
   );
 };
 
 Map.defaultProps = {
-  zoom: 10,
+  zoom: 12,
   center: [0, 0],
 };
 

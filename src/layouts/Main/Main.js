@@ -339,7 +339,7 @@ const Main = props => {
         <Divider />
         {children}
       </main>
-      <SectionAlternate>
+      <SectionAlternate id="contact">
         <Contact />
       </SectionAlternate>
       <Footer pages={pages} />

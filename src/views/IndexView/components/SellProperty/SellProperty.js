@@ -1,5 +1,6 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
@@ -41,21 +42,22 @@ const SellProperty = props => {
           <Section>
             <SectionHeader
               title={
-                <span className={classes.textWhite}>
-                  Want to Sell Property?
-                </span>
+                <span className={classes.textWhite}>Myslíme na všechno!</span>
               }
               titleVariant="h3"
               subtitle={
                 <span className={classes.textWhite}>
-                  Let us create a tailored strategic marketing plan and keep
-                  track of the selling process.
+                  Parkovací místo hned u domu, zahradu, kde budete mít naprosté
+                  soukromí, dostatek prostoru pro Vás i Vaše děti a hlavně jste
+                  všude hned!
                 </span>
               }
               ctaGroup={[
-                <Button variant="contained" size="large">
-                  Get started
-                </Button>,
+                <Link to="#house">
+                  <Button variant="contained" size="large">
+                    Vyberte si dům
+                  </Button>
+                </Link>,
               ]}
               align="left"
               disableGutter

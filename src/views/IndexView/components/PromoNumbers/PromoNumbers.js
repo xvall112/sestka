@@ -29,7 +29,6 @@ const PromoNumbers = props => {
             data-aos="fade-up"
           >
             <CardPromo
-              variant="outlined"
               liftUp
               align={isMd ? 'left' : 'center'}
               title={item.title}

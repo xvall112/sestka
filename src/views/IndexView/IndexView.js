@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, Divider, colors, Box, Grid } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
+
 import {
   GetStarted,
   Features,
@@ -11,6 +12,7 @@ import {
   PromoNumbers,
   ModifyInterior,
   ModifyHouse,
+  HouseAdvertising,
 } from './components';
 
 import { promoNumbers, features } from './data';
@@ -38,27 +40,32 @@ const IndexView = () => {
   return (
     <div>
       <Hero />
-      <SectionAlternate className={classes.sectionNoPaddingTop}>
+      <SectionAlternate className={classes.sectionNoPaddingTop} id="info">
         <PromoNumbers data={promoNumbers} />
       </SectionAlternate>
       <Section>
+        <HouseAdvertising />
+      </Section>
+      <Section>
         <ModifyHouse />
       </Section>
-      <Section className={classes.sectionNoPaddingTop}>
+      <Section>
         <ModifyInterior />
       </Section>
       <Section>
         <Features data={features} />
       </Section>
       <SellProperty />
-      <Services />
+      <Section id="house">
+        <Services />
+      </Section>
       <AboutMiddle />
       <Section className={classes.dividerSection}>
         <Divider />
       </Section>
-      <Section narrow>
+      {/*  <Section narrow>
         <GetStarted />
-      </Section>
+      </Section> */}
     </div>
   );
 };

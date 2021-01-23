@@ -43,40 +43,39 @@ const Info = props => {
             title="Detailní informace"
             align="left"
             className={classes.descriptionListIcon}
-            data-aos="fade-up"
           />
           <Grid container spacing={2}>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Typ nabídky"
                 subtitle={contentfulRdHouse.nabidka}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Typ objektu"
                 subtitle={contentfulRdHouse.objekt}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Typ vlastnictví"
                 subtitle={contentfulRdHouse.typVlastnictvi}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Dispozice"
                 subtitle={contentfulRdHouse.dispozice}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Lokalita"
                 subtitle={contentfulRdHouse.lokalita}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Energetická třída"
                 subtitle={contentfulRdHouse.energetickaTrida}
@@ -97,40 +96,39 @@ const Info = props => {
             title="Vybavení"
             align="left"
             className={classes.descriptionListIcon}
-            data-aos="fade-up"
           />
           <Grid container spacing={2}>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Balkón"
                 subtitle={contentfulRdHouse.balkon}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Lodžie"
                 subtitle={contentfulRdHouse.lodzie}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Terasa"
                 subtitle={contentfulRdHouse.terasa}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Sklep"
                 subtitle={contentfulRdHouse.sklep}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Zahrada"
                 subtitle={contentfulRdHouse.zahrada}
               />
             </Grid>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title="Garáž"
                 subtitle={contentfulRdHouse.garaz}
@@ -151,10 +149,9 @@ const Info = props => {
             title="Stručný popis"
             align="left"
             className={classes.descriptionListIcon}
-            data-aos="fade-up"
           />
           <Grid container spacing={2}>
-            <Grid item xs={12} data-aos="fade-up">
+            <Grid item xs={12}>
               <CardJobMinimal
                 title={contentfulRdHouse.strucnyPopis.strucnyPopis}
               />
@@ -174,54 +171,53 @@ const Info = props => {
             title="Technické informace"
             align="left"
             className={classes.descriptionListIcon}
-            data-aos="fade-up"
           />
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <Grid container spacing={2}>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Stav nemovitosti"
                     subtitle={contentfulRdHouse.stavNemovitosti}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Rok výstavby"
                     subtitle={contentfulRdHouse.rokVystavby}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Celkem pater"
                     subtitle={contentfulRdHouse.celkemPater}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Konstrukce"
                     subtitle={contentfulRdHouse.konstrukce}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Zastavěná plocha"
                     subtitle={`${contentfulRdHouse.zastavenaPlocha} ㎡`}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Užitá plocha"
                     subtitle={`${contentfulRdHouse.uzitaPlocha}㎡`}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Plocha parcely"
                     subtitle={`${contentfulRdHouse.plochaParcely} ㎡`}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Plocha zahrady"
                     subtitle={`${contentfulRdHouse.plochaZahrady} ㎡`}
@@ -231,49 +227,49 @@ const Info = props => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Grid container spacing={2}>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Zastavěná plocha garáže"
                     subtitle={`${contentfulRdHouse.zastavenaPlochaGaraz} ㎡`}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Užitá plocha garáže"
                     subtitle={`${contentfulRdHouse.uzitaPlochaGaraz} ㎡`}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Elektřina"
                     subtitle={contentfulRdHouse.elektrina}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Plyn"
                     subtitle={contentfulRdHouse.plyn}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Voda"
                     subtitle={contentfulRdHouse.voda}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Vytápění"
                     subtitle={contentfulRdHouse.vytapeni}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Telefonní přípojka"
                     subtitle={contentfulRdHouse.telefoniPripojka}
                   />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up">
+                <Grid item xs={12}>
                   <CardJobMinimal
                     title="Zařízeno"
                     subtitle={contentfulRdHouse.zarizeno}

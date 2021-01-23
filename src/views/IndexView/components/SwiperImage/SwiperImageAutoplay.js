@@ -59,6 +59,7 @@ const SwiperImage = props => {
     navigationButtonStyle,
     imageClassName,
     className,
+    autoplay,
     ...rest
   } = props;
 
@@ -66,6 +67,10 @@ const SwiperImage = props => {
 
   React.useEffect(() => {
     new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       slidesPerView: 1,
       spaceBetween: 0,
       navigation: {

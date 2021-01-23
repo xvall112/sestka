@@ -1,9 +1,12 @@
 import React from 'react';
 
-import { useStaticQuery, graphql } from 'gatsby';
-import { Section, SectionAlternate } from 'components/organisms';
+import { graphql } from 'gatsby';
+import { Section } from 'components/organisms';
 import { Info, Hero } from './components';
 import Layout from '../../layouts/Main';
+import Gallery from './components/gallery/gallery';
+import Pricings from './components/Pricings/Pricings';
+import Pozemek from './components/pozemek/pozemek';
 
 export const query = graphql`
   query($slug: String!) {
@@ -23,6 +26,7 @@ export const query = graphql`
           ...GatsbyContentfulFluid
         }
       }
+
       konstrukce
       lodzie
       lokalita
@@ -30,6 +34,9 @@ export const query = graphql`
       name
       objekt
       obrazky {
+        file {
+          url
+        }
         fluid {
           ...GatsbyContentfulFluid
         }
@@ -37,9 +44,17 @@ export const query = graphql`
       plochaParcely
       plochaZahrady
       plyn
+      pozemek {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
       rokVystavby
       sklep
       slug
+      stav {
+        stav
+      }
       stavNemovitosti
       strucnyPopis {
         strucnyPopis
@@ -66,7 +81,16 @@ const House = props => {
       <Layout>
         <Hero data={props} />
         <Section>
+          <Pozemek data={props} />
+        </Section>
+        <Section>
           <Info data={props} />
+        </Section>
+        <Section>
+          <Gallery data={props} />
+        </Section>
+        <Section>
+          <Pricings data={props} />
         </Section>
       </Layout>
     </div>

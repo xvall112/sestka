@@ -97,6 +97,7 @@ const query = graphql`
     }
   }
 `;
+
 const Hero = props => {
   const nevim = useStaticQuery(query);
   const {
@@ -122,7 +123,7 @@ const Hero = props => {
       <Section className={classes.padding}>
         <SectionHeader
           title={contentfulRdHouse.name}
-          subtitle="We are founded by a leading academic and researcher in the field of Industrial Systems Engineering."
+          /* subtitle="We are founded by a leading academic and researcher in the field of Industrial Systems Engineering." */
           align="left"
           titleProps={{
             className: clsx(classes.title, classes.textWhite),
@@ -166,7 +167,11 @@ const Hero = props => {
               <Grid item xs={12} data-aos="fade-up">
                 <CardJobMinimalPrice
                   title="Cena"
-                  subtitle={`${contentfulRdHouse.cena} Kč`}
+                  subtitle={
+                    contentfulRdHouse.stav.stav === 'prodáno'
+                      ? 'PRODÁNO'
+                      : `${contentfulRdHouse.cena} Kč`
+                  }
                 />
               </Grid>
             </Grid>
@@ -175,13 +180,6 @@ const Hero = props => {
       </Section>
     </div>
   );
-};
-
-Hero.propTypes = {
-  /**
-   * External classes
-   */
-  className: PropTypes.string,
 };
 
 export default Hero;
