@@ -25,7 +25,7 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    'gatsby-plugin-top-layout',
+
     {
       resolve: 'gatsby-plugin-material-ui',
       // If you want to use styled components you should change the injection order.
@@ -41,12 +41,12 @@ module.exports = {
     // 'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
-    {
+    /* {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/pages`,
       },
-    },
+    }, */
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {

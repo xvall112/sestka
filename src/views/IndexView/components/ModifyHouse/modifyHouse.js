@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
@@ -8,7 +8,6 @@ import { Grid, Typography, useMediaQuery } from '@material-ui/core';
 import { SectionHeader, OverlapedImages } from 'components/molecules';
 import Gif from 'assets/gi/animateColor.gif';
 import HouseImg from 'assets/gi/houseColor10Replay.png';
-var GifPlayer = require('react-gif-player');
 
 const query = graphql`
   {
@@ -41,13 +40,7 @@ const ModifyHouse = props => {
           justify="center"
           alignItems="flex-start"
         >
-          <GifPlayer
-            autoplay={true}
-            gif={Gif}
-            still={HouseImg}
-            style={{ height: '100%', width: '100%' }}
-          />
-          ,
+          <img scr={HouseImg} />
         </Grid>
         <Grid item xs={12} md={6}>
           <SectionHeader

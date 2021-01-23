@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Toolbar } from '@material-ui/core';
 
 import { Image } from 'components/atoms';
-import { isLightMode } from 'utils';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -48,7 +47,11 @@ const Topbar = props => {
         <a href="/" title="thefront">
           <Image
             className={classes.logoImage}
-            src={isLightModeTheme ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg' : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'}
+            src={
+              isLightModeTheme
+                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
+                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
+            }
             alt="thefront"
             lazy={false}
           />
