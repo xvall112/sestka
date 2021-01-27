@@ -5,7 +5,7 @@ const fse = require('fs-extra');
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   //create page for Workshop
-  const rdHouseTemplate = path.resolve('./src/templates/RdHouse');
+  const rdHouseTemplate = path.resolve('./src/templates/RdHouse/house.js');
   const res = await graphql(`
     query rdHouse {
       allContentfulRdHouse {
