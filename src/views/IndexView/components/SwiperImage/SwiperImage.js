@@ -5,8 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Swiper from 'swiper';
 import Img from 'gatsby-image';
 
-import { Image } from 'components/atoms';
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -130,25 +128,6 @@ const SwiperImage = props => {
       </div>
     </div>
   );
-};
-
-SwiperImage.propTypes = {
-  /**
-   * External classes
-   */
-  className: PropTypes.string,
-  /**
-   * External classes for the images
-   */
-  imageClassName: PropTypes.string,
-  /**
-   * The array of images object which should consist of src, alt and srcset attributes
-   */
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  /**
-   * Styles classes of the navigation button
-   */
-  navigationButtonStyle: PropTypes.string,
 };
 
 export default SwiperImage;

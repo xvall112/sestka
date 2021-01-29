@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
@@ -13,6 +14,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
   },
   header: {
+    zIndex: 4,
     [theme.breakpoints.up('md')]: {
       position: 'absolute',
       top: '50%',
@@ -22,6 +24,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   image: {
+    zIndex: 1,
     position: 'relative',
     bottom: theme.spacing(-1),
     [theme.breakpoints.down('sm')]: {
@@ -40,24 +43,23 @@ const AboutMiddle = props => {
     <div className={clsx(classes.root, className)} {...rest}>
       <Section className={classes.header}>
         <SectionHeader
-          title={
-            <span className={classes.textWhite}>
-              Easily find leads and customers
-            </span>
-          }
+          title={<span className={classes.textWhite}>Kontaktujte Nás</span>}
           subtitle={
             <span className={classes.textWhite}>
-              Send one-off and automated email, push, and in-app messages to
-              people. Create better stories.
+              {' '}
+              Šestka se nachází v krásném prostředí městské části Sázky v
+              Příbrami a ve vysokém standardu zajišťuje klidné a pohodlné
+              bydlení pro všechny.
             </span>
           }
           ctaGroup={[
-            <Button variant="contained" size="large">
-              Get started
-            </Button>,
+            <Link to="#contact">
+              <Button variant="contained" size="large">
+                kontakt
+              </Button>
+            </Link>,
           ]}
           align="left"
-          disableGutter
           data-aos="fade-up"
         />
       </Section>

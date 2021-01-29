@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import SideMenu from './sideMenu';
 import Img from 'gatsby-image';
 
@@ -18,8 +18,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
-import MenuIcon from '@material-ui/icons/Menu';
 
+import { contact } from '../../../../views/IndexView/data/index';
 const query = graphql`
   query {
     logoImage: file(relativePath: { eq: "logo.png" }) {
@@ -46,11 +46,13 @@ const Header = () => {
               justify="space-between"
               alignItems="center"
             >
-              <Img fixed={data.logoImage.childImageSharp.fixed} />
-
+              <Link to="/" className={classes.link}>
+                <Img fixed={data.logoImage.childImageSharp.fixed} />
+              </Link>
               <Grid item>
                 <Box display={{ xs: 'none', sm: 'inline' }}>
                   <Button
+                    href={`mailto:${contact.email}`}
                     className={classes.button}
                     variant="outlined"
                     startIcon={<EmailIcon />}
@@ -63,17 +65,26 @@ const Header = () => {
                   className={classes.button}
                   variant="outlined"
                   startIcon={<PhoneAndroidIcon />}
+                  href={`tel:${contact.mobile}`}
                 >
-                  603 262 359
+                  {contact.mobile}
                 </Button>
               </Grid>
               <Grid item>
                 <Grid container direction="row">
                   <Box display={{ xs: 'none', sm: 'inline' }}>
-                    <IconButton color="inherit" aria-label="menu">
+                    <IconButton
+                      href={contact.facebook}
+                      color="inherit"
+                      aria-label="menu"
+                    >
                       <FacebookIcon />
                     </IconButton>
-                    <IconButton color="inherit" aria-label="menu">
+                    <IconButton
+                      color="inherit"
+                      aria-label="menu"
+                      href={contact.instagram}
+                    >
                       <InstagramIcon />
                     </IconButton>
                   </Box>
@@ -88,6 +99,10 @@ const Header = () => {
   );
 };
 const useStyles = makeStyles(theme => ({
+  link: {
+    padding: 0,
+    margin: 0,
+  },
   button: {
     color: 'white',
     borderColor: 'white',

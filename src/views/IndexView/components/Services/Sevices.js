@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { SwiperImage } from '../../components';
+import SwiperImage from '../SwiperImage/SwiperImage';
 import {
   useMediaQuery,
   Grid,
@@ -108,19 +108,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const query = graphql`
-  {
-    allContentfulRdHouse(sort: { fields: name }) {
-      nodes {
-        slug
-        name
-        plochaParcely
-        introImages {
-          fluid {
-            ...GatsbyContentfulFluid
+  query {
+    house: allContentfulRdHouse(sort: { fields: name }) {
+      edges {
+        node {
+          slug
+          name
+          plochaParcely
+          introImages {
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid
+            }
           }
-        }
-        stav {
-          stav
+          stav {
+            stav
+          }
         }
       }
     }
@@ -137,15 +139,14 @@ const Services = ({ className, ...rest }) => {
 
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
-      Build accessible React apps&nbsp;
+      Na výběr máte z šesti domů{' '}
       <Typography component="span" variant="inherit" color="primary">
-        with speed
+        "ŠESTKA"
       </Typography>
     </Typography>
   );
 
-  const subtitle =
-    'Build a beautiful, modern website with flexible, fully customizable, atomic Material UI components.';
+  const subtitle = '';
 
   return (
     <div className={className} {...rest}>
@@ -163,30 +164,29 @@ const Services = ({ className, ...rest }) => {
       </Section>
       <Section className={classes.noPaddingTop}>
         <Grid container spacing={2}>
-          {data.allContentfulRdHouse.nodes.map((item, index) => (
+          {data.house.edges.map((item, index) => (
             <Grid key={index} item xs={12} sm={12} md={4} data-aos="fade-up">
               <CardProduct
-                withShadow
                 liftUp
                 mediaContent={
                   <>
                     <SwiperImage
                       navigationButtonStyle={classes.swiperNavButton}
-                      items={item.introImages}
+                      items={item.node.introImages}
                       imageClassName={classes.image}
                     />
                     <div className={classes.locationCardPrice}>
                       <Typography
                         variant="body1"
                         className={
-                          item.stav.stav === 'volné'
+                          item.node.stav.stav === 'volné'
                             ? classes.stavVolne
-                            : item.stav.stav === 'prodáno'
+                            : item.node.stav.stav === 'prodáno'
                             ? classes.stavProdano
                             : classes.stavRezervovano
                         }
                       >
-                        {item.stav.stav}
+                        {item.node.stav.stav}
                       </Typography>
                     </div>
                   </>
@@ -200,7 +200,7 @@ const Services = ({ className, ...rest }) => {
                         align="left"
                         className={classes.fontWeight700}
                       >
-                        {item.name}
+                        {item.node.name}
                       </Typography>
                     </Grid>
                     <Grid item xs={12}>
@@ -231,7 +231,7 @@ const Services = ({ className, ...rest }) => {
                               </NoSsr>
                             </ListItemIcon>
                             <ListItemText
-                              primary={`${item.plochaParcely} ㎡`}
+                              primary={`${item.node.plochaParcely} ㎡`}
                             />
                           </ListItem>
                         </List>
@@ -267,13 +267,15 @@ const Services = ({ className, ...rest }) => {
                     </Grid>
                     <Divider className={classes.divider} />
                     <Grid item container justify="center" xs={12}>
-                      <Link to={`/dum/${item.slug}`}>
+                      <Link to={`/dum/${item.node.slug}`}>
                         <Button
                           variant="contained"
                           color="primary"
-                          disabled={item.stav.stav === 'prodáno' ? true : false}
+                          disabled={
+                            item.node.stav.stav === 'prodáno' ? true : false
+                          }
                         >
-                          Vstoupit do {item.name}
+                          Vstoupit do {item.node.name}
                         </Button>
                       </Link>
                     </Grid>

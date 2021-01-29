@@ -34,9 +34,11 @@ const Map = props => {
     const markerShadow = require('assets/images/leaflet-assets/marker-shadow.png');
 
     L.Icon.Default.mergeOptions({
-      iconRetinaUrl: typeof markerIcon2x === 'object' ? markerIcon2x.default : markerIcon2x,
+      iconRetinaUrl:
+        typeof markerIcon2x === 'object' ? markerIcon2x.default : markerIcon2x,
       iconUrl: typeof markerIcon === 'object' ? markerIcon.default : markerIcon,
-      shadowUrl: typeof markerShadow === 'object' ? markerShadow.default : markerShadow,
+      shadowUrl:
+        typeof markerShadow === 'object' ? markerShadow.default : markerShadow,
     });
   });
 

@@ -1,8 +1,8 @@
+import '@fontsource/dm-sans';
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 import { sessionStorage } from 'utils';
 
 import { light, dark } from './palette';
-import '@fontsource/dm-sans';
 
 const mode = sessionStorage.getItem('themeMode') || 'light';
 
@@ -13,7 +13,7 @@ const theme = responsiveFontSizes(
       contentWidth: 1236,
     },
     typography: {
-      fontFamily: 'DM Sans',
+      fontFamily: 'DM-Sans',
     },
     zIndex: {
       appBar: 1200,

@@ -334,18 +334,12 @@ const Main = props => {
       })}
     >
       <Header />
-      <Topbar onSidebarOpen={handleSidebarOpen} pages={pages} />
-      <Sidebar
-        onClose={handleSidebarClose}
-        open={open}
-        variant="temporary"
-        pages={pages}
-      />
+
       <main>
         <Divider />
         {children}
       </main>
-      <SectionAlternate>
+      <SectionAlternate id="contact">
         <Contact />
       </SectionAlternate>
       <Footer pages={pages} />

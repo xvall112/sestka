@@ -1,21 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, Button, Typography } from '@material-ui/core';
-import { Image } from 'components/atoms';
+
+import { useMediaQuery, Button, Typography, Box } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
+import SwiperImageAutoplay from '../../components/SwiperImage/SwiperImageAutoplay';
+import { HeroShaped } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
-  image: {
-    boxShadow:
-      '25px 60px 125px -25px rgba(80,102,144,.1), 16px 40px 75px -40px rgba(0,0,0,.2)',
-    borderRadius: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: 500,
-    },
+  swiper: {
+    height: '100%',
+    /* [theme.breakpoints.up('lg')]: { minHeight: '70vh' }, */
+  },
+  swiperNavButton: {
+    width: `${theme.spacing(3)}px !important`,
+    height: `${theme.spacing(3)}px !important`,
+    padding: `${theme.spacing(2)}px !important`,
   },
 }));
-
+const query = graphql`
+  {
+    contentfulLandingPageImage {
+      images {
+        fluid(maxHeight: 700) {
+          src
+        }
+      }
+    }
+  }
+`;
 const Hero = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
@@ -25,65 +39,66 @@ const Hero = props => {
     defaultMatches: true,
   });
 
+  const data = useStaticQuery(query);
+
   return (
-    <div className={className} {...rest}>
-      <Grid
-        container
-        justify="space-between"
-        spacing={4}
-        direction={isMd ? 'row' : 'column-reverse'}
-      >
-        <Grid
-          item
-          container
-          alignItems="center"
-          xs={12}
-          md={6}
-          data-aos={'fade-up'}
-        >
+    <div className={classes.swiper} {...rest}>
+      <HeroShaped
+        leftSide={
           <SectionHeader
             title={
+              <Box fontWeight="fontWeightBold">
+                Rodinné domy na prodej <br></br>
+                <Box pt={2}>
+                  <Typography
+                    component="span"
+                    variant="inherit"
+                    color="primary"
+                  >
+                    "ŠESTKA"
+                  </Typography>
+                </Box>
+              </Box>
+            }
+            subtitle={
               <span>
-                Beautiful data representation
-                <br />
-                <Typography component="span" variant="inherit" color="primary">
-                  built with theFront.
-                </Typography>
+                {' '}
+                Bydlení v přírodě s docházkovou vzdáleností do centra Příbrami.
+                Minimalistické, moderní, pohodlné a hlavně s naprostým
+                soukromím! <br></br> To jsou domy Šestka!{' '}
               </span>
             }
-            subtitle="World developers use our theFront theme to build their internal tools and client admin applications. Save yourself time and money."
             ctaGroup={[
-              <Button variant="contained" color="primary" size="large">
-                Start now
-              </Button>,
-              <Button variant="outlined" color="primary" size="large">
-                Learn more
-              </Button>,
+              <Link to="#info">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size={isMd ? 'large' : 'medium'}
+                >
+                  více
+                </Button>
+              </Link>,
+              <Link to="#house">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size={isMd ? 'large' : 'medium'}
+                >
+                  domy
+                </Button>
+              </Link>,
             ]}
             align="left"
-            disableGutter
             titleVariant="h3"
           />
-        </Grid>
-        <Grid
-          item
-          container
-          justify="flex-start"
-          alignItems="center"
-          xs={12}
-          md={6}
-          data-aos={'fade-up'}
-        >
-          <Image
-            src="https://assets.maccarianagency.com/the-front/illustrations/dashboard-screenshot.jpg"
-            alt="TheFront Company"
-            className={classes.image}
-            data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000"
+        }
+        rightSide={
+          <SwiperImageAutoplay
+            navigationButtonStyle={classes.swiperNavButton}
+            items={data.contentfulLandingPageImage.images}
           />
-        </Grid>
-      </Grid>
+        }
+      />
     </div>
   );
 };

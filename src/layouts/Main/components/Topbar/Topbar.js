@@ -19,7 +19,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { Image } from 'components/atoms';
-import { isLightMode, sessionStorage } from 'utils';
 
 const useStyles = makeStyles(theme => ({
   flexGrow: {
@@ -265,7 +264,11 @@ const Topbar = props => {
         <a href="/" title="thefront">
           <Image
             className={classes.logoImage}
-            src={isLightModeTheme ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg' : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'}
+            src={
+              isLightModeTheme
+                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
+                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
+            }
             alt="thefront"
             lazy={false}
           />
@@ -275,10 +278,7 @@ const Topbar = props => {
       <FormControlLabel
         control={<Switch color="primary" checked={isLightModeTheme} />}
         label={
-          <Typography
-            variant="body1"
-            color="textPrimary"
-          >
+          <Typography variant="body1" color="textPrimary">
             Light
           </Typography>
         }
@@ -333,16 +333,16 @@ const Topbar = props => {
               </Popover>
             </div>
           ))}
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-            <Button
-              variant="outlined"
-              component="a"
-              href="/documentation"
-            >
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
+            <Button variant="outlined" component="a" href="/documentation">
               Documentation
             </Button>
           </ListItem>
-          <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
+          <ListItem
+            className={clsx(classes.listItem, 'menu-item--no-dropdown')}
+          >
             <Button
               variant="contained"
               color="primary"

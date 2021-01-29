@@ -1,4 +1,6 @@
 export const light = {
+  backgroundGradient: 'linear-gradient(147deg, #FFE53B 0%, #FF2525 74%)',
+
   alternate: {
     main: 'rgb(247, 249, 250)',
     dark: '#e8eaf6',

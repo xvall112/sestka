@@ -69,7 +69,7 @@ const CardPromo = props => {
         </Grid>
         <Grid item xs={12} className="card-promo__title-wrapper">
           <Typography
-            variant="h4"
+            variant="h5"
             align={align}
             className={clsx('card-promo__title', classes.fontWeight700)}
             color={titleColor || 'textPrimary'}

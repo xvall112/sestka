@@ -10,10 +10,12 @@ import {
   Typography,
   Avatar,
   Button,
-  NoSsr,
+  Box,
 } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
-import { CardBase, DescriptionListIcon } from 'components/organisms';
+
+import Map from '../Map/Map';
+import { mapData } from '../../data/index';
 
 const useStyles = makeStyles(theme => ({
   checkBox: {
@@ -26,17 +28,7 @@ const useStyles = makeStyles(theme => ({
       marginTop: theme.spacing(6),
     },
   },
-  featureItems: {
-    width: '100%',
-    height: '100%',
-    background:
-      'url(https://assets.maccarianagency.com/the-front/illustrations/bg-shapes.svg) no-repeat top center',
-    backgroundSize: 'contain',
 
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(3),
-    },
-  },
   gridItemPositioned: {
     marginTop: '25%',
   },
@@ -71,60 +63,20 @@ const Features = props => {
     defaultMatches: true,
   });
 
-  const { items, properties } = data;
+  const { properties } = data;
 
   return (
-    <div className={className} {...rest}>
-      <Grid container spacing={isMd ? 4 : 2}>
+    <Box mb={7} className={className} {...rest}>
+      <Grid
+        container
+        spacing={isMd ? 4 : 2}
+        direction={isMd ? 'row' : 'column-reverse'}
+      >
         <Grid item xs={12} md={6} data-aos="fade-up">
-          <div className={classes.featureItems}>
-            <Grid container spacing={isMd ? 4 : 1}>
-              <Grid item xs={6}>
-                <Grid container spacing={isMd ? 4 : 1} direction="column">
-                  {items.slice(0, 2).map((item, index) => (
-                    <Grid item xs={12} key={index} data-aos="fade-up">
-                      <CardBase withShadow liftUp>
-                        <DescriptionListIcon
-                          icon={
-                            <div className={classes.iconCover}>
-                              <NoSsr>
-                                <i className={item.icon} />
-                              </NoSsr>
-                            </div>
-                          }
-                          title={item.title}
-                          subtitle={item.subtitle}
-                        />
-                      </CardBase>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-              <Grid item xs={6} className={classes.gridItemPositioned}>
-                <Grid container spacing={isMd ? 4 : 1} direction="column">
-                  {items
-                    .slice(items.length - 2, items.length)
-                    .map((item, index) => (
-                      <Grid item xs={12} key={index} data-aos="fade-up">
-                        <CardBase withShadow liftUp>
-                          <DescriptionListIcon
-                            icon={
-                              <div className={classes.iconCover}>
-                                <NoSsr>
-                                  <i className={item.icon} />
-                                </NoSsr>
-                              </div>
-                            }
-                            title={item.title}
-                            subtitle={item.subtitle}
-                          />
-                        </CardBase>
-                      </Grid>
-                    ))}
-                </Grid>
-              </Grid>
-            </Grid>
-          </div>
+          <Map
+            pins={mapData.pins}
+            center={[49.676652203508134, 14.019295458063725]}
+          />
         </Grid>
         <Grid item xs={12} md={6} data-aos="fade-up">
           <Grid
@@ -135,9 +87,9 @@ const Features = props => {
             className={classes.propsGrid}
           >
             <SectionHeader
-              label="SEAMLESS INTEGRATION"
-              title="Data transfer is just a few clicks."
-              subtitle="If we're no longer the right solution for you, we'll allow you to export and take your data at anytime for any reason."
+              label="LOKALITA"
+              title="DOSTUPNOST. PŘÍRODA.  SOUKROMÍ."
+              subtitle=""
               align="left"
               disableGutter
             />
@@ -152,25 +104,25 @@ const Features = props => {
                       />
                     </ListItemAvatar>
                     <Typography variant="subtitle1" color="textPrimary" noWrap>
-                      {item}
+                      {item.title}
                     </Typography>
                   </ListItem>
                 </Grid>
               ))}
             </Grid>
-            <Button
+            {/* <Button
               size="large"
               variant="contained"
               color="primary"
               className={classes.cta}
               data-aos="fade-up"
             >
-              Get started
-            </Button>
+              Objevte více v okolí
+            </Button> */}
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 

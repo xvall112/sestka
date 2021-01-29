@@ -40,6 +40,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontWeight: 'bold',
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: theme.spacing(6),
+    },
   },
 }));
 
@@ -69,8 +72,9 @@ const CardJobMinimal = props => {
       >
         <div className="card-job-minimal__title-container">
           <Typography
-            variant="subtitle1"
-            className={clsx(classes.title, 'card-job-minimal__title')}
+            variant="body2"
+            color="textSecondary"
+            className="card-job-minimal__title"
             {...titleProps}
           >
             {title}
@@ -78,9 +82,8 @@ const CardJobMinimal = props => {
         </div>
         <div className="card-job-minimal__location-conatiner">
           <Typography
-            variant="body2"
-            color="textSecondary"
-            className="card-job-minimal__location"
+            variant="subtitle1"
+            className={clsx(classes.title, 'card-job-minimal__location')}
             {...subtitleProps}
           >
             {subtitle}
@@ -104,33 +107,6 @@ CardJobMinimal.defaultProps = {
   showArrow: false,
   titleProps: {},
   subtitleProps: {},
-};
-
-CardJobMinimal.propTypes = {
-  /**
-   * External classes
-   */
-  className: PropTypes.string,
-  /**
-   * Job title of the card
-   */
-  title: PropTypes.string.isRequired,
-  /**
-   * Job subtitle of the card
-   */
-  subtitle: PropTypes.string.isRequired,
-  /**
-   * Should show arrow or not
-   */
-  showArrow: PropTypes.bool,
-  /**
-   * Additional props to pass to the title Typography component
-   */
-  titleProps: PropTypes.object,
-  /**
-   * Additional props to pass to the subtitle Typography component
-   */
-  subtitleProps: PropTypes.object,
 };
 
 export default CardJobMinimal;
