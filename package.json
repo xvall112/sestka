@@ -1,21 +1,17 @@
 {
-  "name": "thefront",
+  "name": "RdSestka",
   "author": "maccarian agency",
   "email": "hi@maccarianagency.com",
   "version": "3.1.1",
   "private": true,
   "scripts": {
-    "start": "npm run react-scripts:start",
-    "build": "npm run react-scripts:build",
-    "react-scripts:start": "react-scripts start",
-    "react-scripts:build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
-    "nextjs:dev": "next dev",
-    "nextjs:build": "cross-env GENERATE_SOURCEMAP=false next build",
-    "nextjs:start": "next start",
-    "gatsbyjs:develop": "gatsby develop",
-    "gatsbyjs:build": "gatsby build",
-    "prettier": "prettier --write '**/*.{js,css,html}'",
-    "clear-all": "rimraf ./.cache ./.next ./build ./dist ./node_modules ./public/page-data ./public/static ./public/render-page.js ./public/render-page.js.map"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "eslintConfig": {
     "extends": "react-app"
