@@ -39,60 +39,58 @@ const Header = () => {
     <div>
       <AppBar position="static" className={classes.appBar}>
         <Container>
-          <Toolbar variant="dense">
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              alignItems="center"
-            >
-              <Link to="/" className={classes.link}>
-                <Img fixed={data.logoImage.childImageSharp.fixed} />
-              </Link>
-              <Grid item>
-                <Box display={{ xs: 'none', sm: 'inline' }}>
-                  <Button
-                    href={`mailto:${contact.email}`}
-                    className={classes.button}
-                    variant="outlined"
-                    startIcon={<EmailIcon />}
-                  >
-                    napište nám
-                  </Button>
-                </Box>
-
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Link to="/" className={classes.link}>
+              <Img fixed={data.logoImage.childImageSharp.fixed} />
+            </Link>
+            <Grid item>
+              <Box display={{ xs: 'none', sm: 'inline' }}>
                 <Button
+                  href={`mailto:${contact.email}`}
                   className={classes.button}
                   variant="outlined"
-                  startIcon={<PhoneAndroidIcon />}
-                  href={`tel:${contact.mobile}`}
+                  startIcon={<EmailIcon />}
                 >
-                  {contact.mobile}
+                  napište nám
                 </Button>
-              </Grid>
-              <Grid item>
-                <Grid container direction="row">
-                  <Box display={{ xs: 'none', sm: 'inline' }}>
-                    <IconButton
-                      href={contact.facebook}
-                      color="inherit"
-                      aria-label="menu"
-                    >
-                      <FacebookIcon />
-                    </IconButton>
-                    <IconButton
-                      color="inherit"
-                      aria-label="menu"
-                      href={contact.instagram}
-                    >
-                      <InstagramIcon />
-                    </IconButton>
-                  </Box>
-                  <SideMenu />
-                </Grid>
+              </Box>
+
+              <Button
+                className={classes.button}
+                variant="outlined"
+                startIcon={<PhoneAndroidIcon />}
+                href={`tel:${contact.mobile}`}
+              >
+                {contact.mobile}
+              </Button>
+            </Grid>
+            <Grid item>
+              <Grid container direction="row">
+                <Box display={{ xs: 'none', sm: 'inline' }}>
+                  <IconButton
+                    href={contact.facebook}
+                    color="inherit"
+                    aria-label="menu"
+                  >
+                    <FacebookIcon />
+                  </IconButton>
+                  <IconButton
+                    color="inherit"
+                    aria-label="menu"
+                    href={contact.instagram}
+                  >
+                    <InstagramIcon />
+                  </IconButton>
+                </Box>
+                <SideMenu />
               </Grid>
             </Grid>
-          </Toolbar>
+          </Grid>
         </Container>
       </AppBar>
     </div>
@@ -101,13 +99,14 @@ const Header = () => {
 const useStyles = makeStyles(theme => ({
   link: {
     padding: 0,
-    margin: 0,
+    marginBottom: -5,
+    height: '100%',
   },
   button: {
     color: 'white',
     borderColor: 'white',
     marginLeft: '10px',
-    [theme.breakpoints.down('md')]: { diplay: 'none' },
+    [theme.breakpoints.down('md')]: { diplay: 'none', marginLeft: 0 },
   },
   appBar: {
     background: theme.backgroundGradient,

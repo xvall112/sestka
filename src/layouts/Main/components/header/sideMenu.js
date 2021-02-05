@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import { IconButton, Grid, Box, Button, Chip } from '@material-ui/core';
+import { IconButton, Grid, Box, Button, Chip, colors } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -85,12 +85,12 @@ const SideMenu = () => {
                   />
                   <Chip
                     label={item.stav.stav}
-                    color={
+                    className={
                       item.stav.stav === 'prodáno'
-                        ? 'primary'
+                        ? classes.prodano
                         : item.stav.stav === 'rezervováno'
-                        ? 'secondary'
-                        : 'default'
+                        ? classes.rezervovano
+                        : classes.volne
                     }
                   />
                 </ListItem>
@@ -146,6 +146,9 @@ const useStyles = makeStyles(theme => ({
   list: {
     width: 300,
   },
+  volne: { backgroundColor: colors.lightGreen.A700, color: 'white' },
+  prodano: { backgroundColor: colors.deepOrange.A400, color: 'white' },
+  rezervovano: { backgroundColor: colors.yellow.A700, color: 'white' },
   fullList: {
     width: 'auto',
   },

@@ -8,7 +8,13 @@ import { SectionHeader } from 'components/molecules';
 import SwiperImageAutoplay from '../../components/SwiperImage/SwiperImageAutoplay';
 import { HeroShaped } from 'components/organisms';
 
+import scrollTo from 'gatsby-plugin-smoothscroll';
+
 const useStyles = makeStyles(theme => ({
+  buttons: {
+    width: '40vw',
+    [theme.breakpoints.up('md')]: { width: '10vw' },
+  },
   swiper: {
     height: '100%',
     /* [theme.breakpoints.up('lg')]: { minHeight: '70vh' }, */
@@ -47,17 +53,14 @@ const Hero = props => {
         leftSide={
           <SectionHeader
             title={
-              <Box fontWeight="fontWeightBold">
+              <Box
+                fontWeight="fontWeightBold"
+                textAlign={isMd ? 'left' : 'center'}
+              >
+                <Typography component="h2" variant="inherit" color="primary">
+                  "ŠESTKA"
+                </Typography>
                 Rodinné domy na prodej <br></br>
-                <Box pt={2}>
-                  <Typography
-                    component="span"
-                    variant="inherit"
-                    color="primary"
-                  >
-                    "ŠESTKA"
-                  </Typography>
-                </Box>
               </Box>
             }
             subtitle={
@@ -69,26 +72,27 @@ const Hero = props => {
               </span>
             }
             ctaGroup={[
-              <Link to="#info">
-                <Button
-                  variant="contained"
-                  color="primary"
-                  size={isMd ? 'large' : 'medium'}
-                >
-                  více
-                </Button>
-              </Link>,
-              <Link to="#house">
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  size={isMd ? 'large' : 'medium'}
-                >
-                  domy
-                </Button>
-              </Link>,
+              <Button
+                className={classes.buttons}
+                variant="contained"
+                color="primary"
+                size="large"
+                fullWidth
+                onClick={() => scrollTo('#info')}
+              >
+                více
+              </Button>,
+              <Button
+                variant="outlined"
+                color="primary"
+                size="large"
+                className={classes.buttons}
+                onClick={() => scrollTo('#house')}
+              >
+                domy
+              </Button>,
             ]}
-            align="left"
+            align={isMd ? 'left' : 'center'}
             titleVariant="h3"
           />
         }

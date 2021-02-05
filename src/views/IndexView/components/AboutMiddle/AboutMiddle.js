@@ -7,6 +7,7 @@ import { Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,11 +54,13 @@ const AboutMiddle = props => {
             </span>
           }
           ctaGroup={[
-            <Link to="#contact">
-              <Button variant="contained" size="large">
-                kontakt
-              </Button>
-            </Link>,
+            <Button
+              variant="contained"
+              size="large"
+              onClick={() => scrollTo('#contact')}
+            >
+              kontakt
+            </Button>,
           ]}
           align="left"
           data-aos="fade-up"

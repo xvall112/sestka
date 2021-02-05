@@ -8,6 +8,8 @@ import Img from 'gatsby-image';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
 
+import scrollTo from 'gatsby-plugin-smoothscroll';
+
 const useStyles = makeStyles(theme => ({
   grid: {
     maxWidth: '100%',
@@ -53,11 +55,13 @@ const SellProperty = props => {
                 </span>
               }
               ctaGroup={[
-                <Link to="#house">
-                  <Button variant="contained" size="large">
-                    Vyberte si dům
-                  </Button>
-                </Link>,
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={() => scrollTo('#house')}
+                >
+                  Vyberte si dům
+                </Button>,
               ]}
               align="left"
               disableGutter

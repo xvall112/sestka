@@ -5,8 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Swiper from 'swiper';
 import Img from 'gatsby-image';
 
-import { Image } from 'components/atoms';
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
