@@ -6,11 +6,13 @@
 import React from 'react';
 import IndexView from '../views/IndexView';
 import Main from '../layouts/Main';
+import SEO from '../views/IndexView/components/seo';
 
 const IndexPage = () => {
   return (
     <div className="container">
       <Main>
+        <SEO title="Home" />
         <IndexView />
       </Main>
     </div>

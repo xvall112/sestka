@@ -3,9 +3,21 @@ require('dotenv').config({
 });
 module.exports = {
   siteMetadata: {
-    title: `Rodinné domy Šestka`,
-    description: `Na prodej šest rodinných domů s vlastním pozemkem a garáží na Sázkách pár minut do Prahy vedle Příbrami`,
+    siteTitle: `Rodinné domy Šestka`,
+    siteDescription: `Na prodej šest rodinných domů s vlastním pozemkem a garáží na Sázkách pár minut do Prahy vedle Příbrami`,
     author: `@sios`,
+    siteUrl: '',
+    lang: 'cz',
+    image: '/src/assets/images/logo.png',
+    keywords: [
+      'prodej',
+      'rodinny dum',
+      'dum',
+      'zahrada',
+      'pozemek',
+      'Pribram',
+      'priroda',
+    ],
   },
   plugins: [
     {

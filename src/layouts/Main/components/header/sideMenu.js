@@ -146,9 +146,21 @@ const useStyles = makeStyles(theme => ({
   list: {
     width: 300,
   },
-  volne: { backgroundColor: colors.lightGreen.A700, color: 'white' },
-  prodano: { backgroundColor: colors.deepOrange.A400, color: 'white' },
-  rezervovano: { backgroundColor: colors.yellow.A700, color: 'white' },
+  volne: {
+    backgroundColor: '#d9f2e4',
+    color: '#1a6848',
+    textTransform: 'uppercase',
+  },
+  prodano: {
+    backgroundColor: colors.deepOrange[100],
+    color: '#bf3045',
+    textTransform: 'uppercase',
+  },
+  rezervovano: {
+    backgroundColor: '#ffefd5',
+    color: '#a85701',
+    textTransform: 'uppercase',
+  },
   fullList: {
     width: 'auto',
   },

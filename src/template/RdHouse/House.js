@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Section } from 'components/organisms';
 import { Info, Hero } from './components';
+import SEO from '../../views/IndexView/components/seo';
 import Layout from '../../layouts/Main';
 import Gallery from './components/gallery/gallery';
 import Pricings from './components/Pricings/Pricings';
@@ -79,6 +80,7 @@ const House = props => {
   return (
     <div>
       <Layout>
+        <SEO title={props.data.contentfulRdHouse.name} />
         <Hero data={props} />
         <Section>
           <Pozemek data={props} />
