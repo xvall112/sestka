@@ -269,8 +269,9 @@ const Services = ({ className, ...rest }) => {
                     <Grid item container justify="center" xs={12}>
                       <Link to={`/dum/${item.node.slug}`}>
                         <Button
-                          variant="contained"
+                          variant="outlined"
                           color="primary"
+                          size="large"
                           disabled={
                             item.node.stav.stav === 'prodáno' ? true : false
                           }

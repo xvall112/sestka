@@ -56,9 +56,9 @@ const IndexView = () => {
         <Features data={features} />
       </Section>
       <SellProperty />
-      <Section id="house">
+      <SectionAlternate id="house">
         <Services />
-      </Section>
+      </SectionAlternate>
       <AboutMiddle />
       <Section className={classes.dividerSection}>
         <Divider />
