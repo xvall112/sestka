@@ -7,7 +7,7 @@ module.exports = {
     siteDescription: `Na prodej šest rodinných domů s vlastním pozemkem a garáží na Sázkách pár minut do Prahy vedle Příbrami`,
     author: `@sios`,
     siteUrl: 'https://pensive-raman-03684b.netlify.app/',
-    lang: 'cz',
+    lang: 'cs',
     image: '/src/assets/images/logo.png',
     keywords: [
       'prodej',
@@ -29,6 +29,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
     {
@@ -36,6 +38,18 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Rd Sestka`,
+        short_name: `Sestka`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#f90003`,
+        display: `standalone`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
 

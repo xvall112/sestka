@@ -23,19 +23,6 @@ const Image = props => {
   const { src, srcSet, alt, lazy, lazyProps, className, ...rest } = props;
 
   const classes = useStyles();
-  if (lazy) {
-    return (
-      <LazyLoadImage
-        className={clsx('image', classes.root, classes.dBlock, className)}
-        alt={alt}
-        src={src}
-        srcSet={srcSet}
-        effect="opacity"
-        {...lazyProps}
-        {...rest}
-      />
-    );
-  }
 
   return (
     <img

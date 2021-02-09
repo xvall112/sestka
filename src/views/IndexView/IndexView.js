@@ -1,9 +1,8 @@
 import React from 'react';
-import { makeStyles, Divider, colors, Box, Grid } from '@material-ui/core';
+import { makeStyles, Divider, colors } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 
 import {
-  GetStarted,
   Features,
   Services,
   Hero,

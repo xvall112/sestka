@@ -120,8 +120,6 @@ const Footer = props => {
 
   const classes = useStyles();
 
-  const landings = pages.landings;
-
   const MenuGroup = props => {
     return (
       <List disablePadding className={classes.menuItem}>
@@ -147,11 +145,10 @@ const Footer = props => {
   };
 
   const LandingPages = () => {
-    const { services } = landings.children;
     return (
       <div className={classes.menu}>
         <div>
-          <MenuGroup item={services} />
+          <MenuGroup />
         </div>
       </div>
     );
@@ -204,7 +201,6 @@ const Footer = props => {
 
 Footer.propTypes = {
   className: PropTypes.string,
-  pages: PropTypes.object.isRequired,
 };
 
 export default Footer;

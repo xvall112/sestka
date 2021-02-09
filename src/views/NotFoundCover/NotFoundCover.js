@@ -1,10 +1,22 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Image } from 'components/atoms';
 import { LearnMoreLink } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { HeroShaped } from 'components/organisms';
+import Img from 'gatsby-image';
+
+const query = graphql`
+  {
+    contentfulAsset(file: { fileName: { eq: "ACCamera_2.jpg" } }) {
+      fluid {
+        ...GatsbyContentfulFluid
+      }
+    }
+  }
+`;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -39,6 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const NotFoundCover = () => {
   const classes = useStyles();
+  const data = useStaticQuery(query);
 
   const handleClick = () => {
     window.history.back();
@@ -52,16 +65,7 @@ const NotFoundCover = () => {
             <SectionHeader
               label="404"
               title="Uh oh."
-              subtitle={
-                <span>
-                  There’s nothing here, but if you feel this is an error please{' '}
-                  <LearnMoreLink
-                    title="let us know"
-                    href="#"
-                    typographyProps={{ variant: 'h6' }}
-                  />
-                </span>
-              }
+              subtitle={<span>Tady nic není </span>}
               titleProps={{
                 variant: 'h3',
               }}
@@ -77,20 +81,14 @@ const NotFoundCover = () => {
                   color="primary"
                   onClick={handleClick}
                 >
-                  Go Back
+                  zpět
                 </Button>,
               ]}
               disableGutter
             />
           </div>
         }
-        rightSide={
-          <Image
-            src="https://assets.maccarianagency.com/the-front/photos/account/cover-3.png"
-            className={classes.image}
-            lazy={false}
-          />
-        }
+        rightSide={<Img fluid={data.contentfulAsset.fluid} alt="obrazek 404" />}
       />
     </div>
   );

@@ -16,6 +16,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import { contact } from '../../../../views/IndexView/data/index';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const query = graphql`
   query {
@@ -65,23 +66,37 @@ const SideMenu = () => {
 
           <List className={classes.list}>
             <Link to="/">
-              <ListItem button>
-                <ListItemIcon>
-                  <HouseIcon />
-                </ListItemIcon>
-                <ListItemText primary="HOME" />
+              <ListItem alignItems="center" button>
+                <ListItemText
+                  primary="HLAVNÍ STRÁNKA"
+                  className={classes.item_hlavniStranka}
+                />
               </ListItem>
             </Link>
             {data.house.nodes.map((item, index) => (
               <Link to={`/dum/${item.slug}`} key={index}>
                 <ListItem button>
                   <ListItemIcon>
-                    <HouseIcon />
+                    <HouseIcon
+                      className={
+                        item.stav.stav === 'prodáno'
+                          ? classes.listItemProdano
+                          : item.stav.stav === 'rezervováno'
+                          ? classes.listItemRezervovano
+                          : classes.listItemVolne
+                      }
+                    />
                   </ListItemIcon>
 
                   <ListItemText
                     primary={item.name}
-                    className={classes.listItem}
+                    className={
+                      item.stav.stav === 'prodáno'
+                        ? classes.listItemProdano
+                        : item.stav.stav === 'rezervováno'
+                        ? classes.listItemRezervovano
+                        : classes.listItemVolne
+                    }
                   />
                   <Chip
                     label={item.stav.stav}
@@ -96,6 +111,14 @@ const SideMenu = () => {
                 </ListItem>
               </Link>
             ))}
+            <Link to="#contact">
+              <ListItem alignItems="center" button>
+                <ListItemText
+                  primary="KONTAKT"
+                  className={classes.item_hlavniStranka}
+                />
+              </ListItem>
+            </Link>
             <Divider />
           </List>
           <Box my={2}>
@@ -139,8 +162,18 @@ const SideMenu = () => {
 
 const useStyles = makeStyles(theme => ({
   root: {},
-  listItem: {
+  item_hlavniStranka: {
     color: theme.palette.primary.main,
+    textAlign: 'center',
+  },
+  listItemProdano: {
+    color: '#bf3045',
+  },
+  listItemRezervovano: {
+    color: '#a85701',
+  },
+  listItemVolne: {
+    color: '#1a6848',
   },
   drawer: { backgroundColor: theme.palette.primary.main },
   list: {
