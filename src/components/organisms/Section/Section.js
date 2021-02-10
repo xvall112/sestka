@@ -61,27 +61,4 @@ const Section = props => {
   );
 };
 
-Section.propTypes = {
-  /**
-   * External classes
-   */
-  className: PropTypes.string,
-  /**
-   * Children to placed inside the section
-   */
-  children: PropTypes.node,
-  /**
-   * Should show narrow sections
-   */
-  narrow: PropTypes.bool,
-  /**
-   * Should the section be full width
-   */
-  fullWidth: PropTypes.bool,
-  /**
-   * Should the section render with no padding
-   */
-  disablePadding: PropTypes.bool,
-};
-
 export default Section;

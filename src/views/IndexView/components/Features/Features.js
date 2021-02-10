@@ -13,6 +13,7 @@ import {
   Box,
 } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
+import DoneIcon from '@material-ui/icons/Done';
 
 import Map from '../Map/Map';
 import { mapData } from '../../data/index';
@@ -51,6 +52,9 @@ const useStyles = makeStyles(theme => ({
   },
   propsGrid: {
     height: '100%',
+  },
+  avatar: {
+    backgroundColor: theme.palette.primary.main,
   },
 }));
 
@@ -98,10 +102,9 @@ const Features = props => {
                 <Grid item xs={12} key={index} data-aos="fade-up">
                   <ListItem disableGutters>
                     <ListItemAvatar>
-                      <Avatar
-                        src="https://assets.maccarianagency.com/the-front/illustrations/check-icon-yellow.svg"
-                        className={classes.checkBox}
-                      />
+                      <Avatar variant="rounded" className={classes.avatar}>
+                        <DoneIcon />
+                      </Avatar>
                     </ListItemAvatar>
                     <Typography variant="subtitle1" color="textPrimary" noWrap>
                       {item.title}

@@ -6,8 +6,6 @@ import Img from 'gatsby-image';
 import {
   makeStyles,
   AppBar,
-  Toolbar,
-  Typography,
   IconButton,
   Grid,
   Container,

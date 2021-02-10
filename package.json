@@ -49,6 +49,7 @@
     "gatsby-plugin-react-leaflet": "^2.0.13",
     "gatsby-plugin-resolve-src": "^2.1.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
+    "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^2.12.1",
     "gatsby-plugin-sitemap": "^2.12.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",
@@ -75,8 +76,9 @@
     "react-syntax-highlighter": "^15.4.3",
     "react-typed": "^1.2.0",
     "react-visibility-sensor": "^5.1.1",
+    "sass": "^1.32.7",
     "start": "^5.1.0",
-    "swiper": "^5.4.1",
+    "swiper": "^6.4.11",
     "validate.js": "^0.13.1",
     "yup": "^0.32.8"
   },

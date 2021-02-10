@@ -30,6 +30,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`,
     'gatsby-plugin-robots-txt',
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,

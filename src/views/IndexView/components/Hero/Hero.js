@@ -5,7 +5,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import { useMediaQuery, Button, Typography, Box } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
-import SwiperImageAutoplay from '../../components/SwiperImage/SwiperImageAutoplay';
+import SwiperImageAutoplay from '../Swiper/SwiperImageAutoplay';
 import { HeroShaped } from 'components/organisms';
 
 import scrollTo from 'gatsby-plugin-smoothscroll';
@@ -98,7 +98,8 @@ const Hero = props => {
         }
         rightSide={
           <SwiperImageAutoplay
-            navigationButtonStyle={classes.swiperNavButton}
+            navigation
+            autoplay
             items={data.contentfulLandingPageImage.images}
           />
         }
