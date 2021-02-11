@@ -32,6 +32,7 @@ export default function TopLayout(props) {
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
+        <meta lang="cs" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

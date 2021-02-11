@@ -18,6 +18,9 @@ import {
 } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { contact } from '../../../../views/IndexView/data/index';
+import PhoneIcon from '@material-ui/icons/Phone';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import PlaceIcon from '@material-ui/icons/Place';
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -37,6 +40,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       justifyContent: 'center',
     },
+  },
+  avatar: {
+    backgroundColor: theme.palette.primary.main,
   },
   icon: {
     background: 'transparent',
@@ -125,11 +131,9 @@ const Contact = props => {
           className={classes.listItem}
         >
           <ListItemAvatar>
-            <Avatar
-              src="https://assets.maccarianagency.com/the-front/illustrations/contact-icon-phone.png"
-              srcSet="https://assets.maccarianagency.com/the-front/illustrations/contact-icon-phone@2x.png 2x"
-              className={classes.icon}
-            />
+            <Avatar variant="rounded" className={classes.avatar}>
+              <PhoneIcon />
+            </Avatar>
           </ListItemAvatar>
           <a href={`tel:${contact.mobile}`}>
             <ListItemText
@@ -155,11 +159,9 @@ const Contact = props => {
           className={classes.listItem}
         >
           <ListItemAvatar>
-            <Avatar
-              src="https://assets.maccarianagency.com/the-front/illustrations/contact-icon-mail.png"
-              srcSet="https://assets.maccarianagency.com/the-front/illustrations/contact-icon-mail@2x.png 2x"
-              className={classes.icon}
-            />
+            <Avatar variant="rounded" className={classes.avatar}>
+              <MailOutlineIcon />
+            </Avatar>
           </ListItemAvatar>
           <a href={`mailto:${contact.email}`}>
             <ListItemText
@@ -184,11 +186,9 @@ const Contact = props => {
           className={classes.listItem}
         >
           <ListItemAvatar className={classes.listItemAvatar}>
-            <Avatar
-              src="https://assets.maccarianagency.com/the-front/illustrations/contact-icon-pin.png"
-              srcSet="https://assets.maccarianagency.com/the-front/illustrations/contact-icon-pin@2x.png 2x"
-              className={classes.icon}
-            />
+            <Avatar variant="rounded" className={classes.avatar}>
+              <PlaceIcon />
+            </Avatar>
           </ListItemAvatar>
           <ListItemText
             className={classes.listItemText}

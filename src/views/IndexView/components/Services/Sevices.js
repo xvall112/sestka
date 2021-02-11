@@ -7,12 +7,7 @@ import { useMediaQuery, Grid, Typography } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
-
 import CardHouse from './Card';
-
-SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const useStyles = makeStyles(theme => ({
   fontWeight900: {
@@ -25,26 +20,6 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 0,
   },
   root: {},
-
-  swiperNav: {
-    '& .swiper-slide': { marginBottom: '50px' },
-    '& .swiper-pagination-bullet-active': {
-      background: theme.palette.primary.main,
-    },
-    '& .swiper-button-next': {
-      color: theme.palette.primary.main,
-      top: '50%',
-      bottom: 'auto',
-      right: 0,
-    },
-    '& .swiper-button-prev': {
-      color: theme.palette.primary.main,
-      top: '50%',
-      bottom: 'auto',
-      right: 'auto',
-      left: 0,
-    },
-  },
 }));
 
 const query = graphql`
@@ -102,27 +77,10 @@ const Services = ({ className, ...rest }) => {
         />
       </Section>
       <Section className={classes.noPaddingTop}>
-        <Grid container>
-          <Swiper
-            pagination={{ clickable: true }}
-            navigation={isMd ? true : false}
-            spaceBetween={0}
-            slidesPerView={isMd ? 3 : 1}
-            className={clsx(classes.root, classes.swiperNav, className)}
-          >
-            {data.house.edges.map((item, index) => (
-              <SwiperSlide key={index}>
-                <Grid
-                  container
-                  direction="row"
-                  justify="center"
-                  alignItems="center"
-                >
-                  <CardHouse item={item} />
-                </Grid>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <Grid container spacing={2}>
+          {data.house.edges.map((item, index) => (
+            <CardHouse item={item} key={index} />
+          ))}
         </Grid>
       </Section>
     </div>

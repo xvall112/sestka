@@ -96,7 +96,7 @@ const useStyles = makeStyles(theme => ({
 const Card = ({ item }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={12} sm={12} md={11}>
+    <Grid item xs={12} sm={12} md={4}>
       <CardProduct
         liftUp
         mediaContent={

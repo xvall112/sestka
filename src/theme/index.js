@@ -26,6 +26,9 @@ const theme = responsiveFontSizes(
           color: 'white',
         },
       },
+      MuiChip: {
+        root: { borderRadius: '5px' },
+      },
     },
   }),
 );
