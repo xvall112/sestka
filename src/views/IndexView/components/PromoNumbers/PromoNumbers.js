@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Typography } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
-import { CardPromo } from 'components/organisms';
+import { CardBase } from 'components/organisms';
 
 const PromoNumbers = props => {
   const { data, className, ...rest } = props;
@@ -28,7 +28,7 @@ const PromoNumbers = props => {
             md={4}
             data-aos="fade-up"
           >
-            <CardPromo
+            <CardBase
               liftUp
               align={isMd ? 'left' : 'center'}
               title={item.title}
