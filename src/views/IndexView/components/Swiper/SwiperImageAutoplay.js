@@ -69,9 +69,9 @@ const SwiperImage = props => {
 
   return (
     <Swiper
-      autoplay={true}
-      pagination={true}
-      navigation={true}
+      autoplay
+      pagination
+      navigation
       spaceBetween={0}
       slidesPerView={1}
       className={clsx(classes.root, classes.swiperNav, className)}
