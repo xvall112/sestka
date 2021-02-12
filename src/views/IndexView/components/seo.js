@@ -36,7 +36,7 @@ const SEO = ({ title, description, image }) => {
     url: `${siteUrl}${pathname}`,
   };
   return (
-    <Helmet htmlAttributes={{ lang: 'cz' }} title={`${title} | ${siteTitle}`}>
+    <Helmet htmlAttributes={{ lang: 'cs' }} title={`${title} | ${siteTitle}`}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta name="keywords" content={keywords} />

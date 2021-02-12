@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import { IconButton, Grid, Box, Button, Chip, colors } from '@material-ui/core';
 import List from '@material-ui/core/List';
@@ -9,14 +9,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import HouseIcon from '@material-ui/icons/House';
 import MenuIcon from '@material-ui/icons/Menu';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import { contact } from '../../../../views/IndexView/data/index';
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const query = graphql`
   query {
@@ -29,6 +27,13 @@ const query = graphql`
         }
       }
     }
+
+    menuIcon: contentfulAsset(file: { fileName: { eq: "menuIcon.png" } }) {
+      fluid(maxWidth: 50) {
+        ...GatsbyContentfulFluid
+      }
+    }
+
     logoImage: file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
         fixed(width: 80) {
@@ -77,14 +82,13 @@ const SideMenu = () => {
               <Link to={`/dum/${item.slug}`} key={index}>
                 <ListItem button>
                   <ListItemIcon>
-                    <HouseIcon
-                      className={
-                        item.stav.stav === 'prodáno'
-                          ? classes.listItemProdano
-                          : item.stav.stav === 'rezervováno'
-                          ? classes.listItemRezervovano
-                          : classes.listItemVolne
-                      }
+                    <Img
+                      fluid={data.menuIcon.fluid}
+                      alt="menuIcon"
+                      style={{
+                        height: 'auto',
+                        width: '40px',
+                      }}
                     />
                   </ListItemIcon>
 
