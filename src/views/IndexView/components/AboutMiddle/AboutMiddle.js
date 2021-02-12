@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     height: 'auto',
     [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
+      padding: theme.spacing(1),
     },
     '& img': { borderRadius: '10px' },
   },
@@ -62,7 +62,7 @@ const AboutMiddle = props => {
   const photos = data.contentfulKontaktImages.images.map((image, index) => {
     return {
       src: image.file.url,
-      width: 4,
+      width: 3,
       height: 2,
     };
   });
