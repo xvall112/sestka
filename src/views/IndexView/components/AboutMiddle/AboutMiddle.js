@@ -30,7 +30,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(1),
     },
-    '& img': { borderRadius: '10px' },
+    '& img': { borderRadius: '10px', maxWidth: '100%' },
+    '& .react-photo-gallery--gallery': { paddingTop: '3px' },
   },
   header: {
     zIndex: 4,
@@ -68,7 +69,7 @@ const AboutMiddle = props => {
   });
   return (
     <div className={clsx(classes.root, className)} {...rest}>
-      <Grid container spacing={4}>
+      <Grid container>
         <Grid
           item
           xs={12}
