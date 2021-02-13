@@ -2,8 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Image } from 'components/atoms';
-import { LearnMoreLink } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { HeroShaped } from 'components/organisms';
 import Img from 'gatsby-image';

@@ -1,25 +1,13 @@
-import React, { useEffect } from 'react';
-import Img from 'gatsby-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
+
 import PropTypes from 'prop-types';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import { Grid, Typography, useMediaQuery } from '@material-ui/core';
-import { SectionHeader, OverlapedImages } from 'components/molecules';
+import { SectionHeader } from 'components/molecules';
 import Gif from '../../../../assets/gi/animateColor.gif';
 
-const query = graphql`
-  {
-    contentfulAsset(file: { fileName: { eq: "justHouse.png" } }) {
-      fluid(maxWidth: 600) {
-        ...GatsbyContentfulFluid
-      }
-    }
-  }
-`;
-
 const ModifyHouse = props => {
-  const data = useStaticQuery(query);
   const { className, ...rest } = props;
 
   const theme = useTheme();

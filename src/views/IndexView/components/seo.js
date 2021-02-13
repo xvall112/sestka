@@ -37,6 +37,12 @@ const SEO = ({ title, description, image }) => {
   };
   return (
     <Helmet htmlAttributes={{ lang: 'cs' }} title={`${title} | ${siteTitle}`}>
+      <meta charSet="utf-8" />
+
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width"
+      />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta name="keywords" content={keywords} />

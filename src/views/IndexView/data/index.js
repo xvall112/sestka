@@ -55,34 +55,42 @@ export const mapData = {
     {
       location: { y: 49.676652203508134, x: 14.019295458063725 },
       popup: 'Rodinné domy "ŠESTKA"',
+      icon: 'house',
     },
     {
       location: { y: 49.671028961317134, x: 13.98839764076555 },
       popup: 'Tesco',
+      icon: 'shopping',
     },
     {
       location: { y: 49.68645701046786, x: 14.00893688309424 },
       popup: 'Billa',
+      icon: 'shopping',
     },
     {
       location: { y: 49.67695218324511, x: 14.000986718825684 },
       popup: 'Albert',
+      icon: 'shopping',
     },
     {
       location: { y: 49.69200542845624, x: 14.010335513389865 },
       popup: 'Oblastní nemocnice Příbram',
+      icon: 'hospital',
     },
     {
       location: { y: 49.678410669829304, x: 14.01681304829646 },
       popup: 'Autobusová zastávka',
+      icon: 'bus',
     },
     {
       location: { y: 49.67234361011606, x: 14.066239384579132 },
       popup: 'Nájezd na dálnici',
+      icon: 'car',
     },
     {
       location: { y: 49.687255425442494, x: 14.009033230848672 },
       popup: 'Centrum Příbram',
+      icon: 'car',
     },
   ],
 };

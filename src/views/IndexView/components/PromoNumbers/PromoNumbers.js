@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, Typography } from '@material-ui/core';
-import { SectionHeader } from 'components/molecules';
+import { useMediaQuery, Grid } from '@material-ui/core';
+
 import { CardPromo } from 'components/organisms';
 
 const PromoNumbers = props => {

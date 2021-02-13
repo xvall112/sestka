@@ -3,9 +3,9 @@ import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import { Grid, Typography, useMediaQuery } from '@material-ui/core';
-import { SectionHeader, OverlapedImages } from 'components/molecules';
+import { SectionHeader } from 'components/molecules';
 
 const query = graphql`
   {
@@ -19,11 +19,6 @@ const query = graphql`
 const ModifyHouse = props => {
   const data = useStaticQuery(query);
   const { className, ...rest } = props;
-
-  const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
-  });
 
   return (
     <div className={className} {...rest}>
@@ -62,7 +57,7 @@ const ModifyHouse = props => {
         >
           <Img
             fluid={data.contentfulAsset.fluid}
-            alt="obrazek"
+            alt="obrazek domu zpredu"
             style={{ height: '100%', width: '100%', borderRadius: '10px' }}
           />
         </Grid>

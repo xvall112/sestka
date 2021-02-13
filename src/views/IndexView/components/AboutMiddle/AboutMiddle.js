@@ -2,20 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button, Grid } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { Button, Grid, useMediaQuery } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import Gallery from 'react-photo-gallery';
-import { CardBase } from 'components/organisms';
+import Img from 'gatsby-image';
 
 export const query = graphql`
   {
     contentfulKontaktImages {
       images {
-        file {
-          url
+        fluid(maxWidth: 300) {
+          ...GatsbyContentfulFluid
         }
       }
     }
@@ -30,9 +29,13 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(1),
     },
-    '& img': { borderRadius: '10px', maxWidth: '100%' },
-    '& .react-photo-gallery--gallery': { paddingTop: '3px' },
+    '& img': {
+      borderRadius: '5px',
+      position: 'relative',
+      maxWidth: '100%',
+    },
   },
+
   header: {
     zIndex: 4,
     [theme.breakpoints.up('md')]: {
@@ -43,14 +46,12 @@ const useStyles = makeStyles(theme => ({
       transform: 'translateY(-50%)',
     },
   },
-  /* image: {
-    zIndex: 1,
-    position: 'relative',
-    bottom: theme.spacing(-1),
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
+  contactImg: {
+    marginBottom: theme.spacing(1),
+    [theme.breakpoints.up('md')]: {
+      marginBottom: theme.spacing(0),
     },
-  }, */
+  },
   textWhite: {
     color: 'white',
   },
@@ -60,13 +61,11 @@ const AboutMiddle = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
   const data = useStaticQuery(query);
-  const photos = data.contentfulKontaktImages.images.map((image, index) => {
-    return {
-      src: image.file.url,
-      width: 3,
-      height: 2,
-    };
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+    defaultMatches: true,
   });
+
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <Grid container>
@@ -78,8 +77,21 @@ const AboutMiddle = props => {
           container
           justify="center"
           alignItems="flex-start"
+          spacing={isMd ? 1 : 0}
         >
-          <Gallery photos={photos} />
+          {data.contentfulKontaktImages.images.map((image, index) => {
+            return (
+              <Grid
+                item
+                xs={12}
+                md={6}
+                key={index}
+                className={classes.contactImg}
+              >
+                <Img fluid={image.fluid} alt="obrazek domu" />
+              </Grid>
+            );
+          })}
         </Grid>
         <Grid item xs={12} md={6}>
           <Section className={classes.header}>

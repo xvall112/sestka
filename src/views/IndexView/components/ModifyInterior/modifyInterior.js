@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Grid, Typography, FormControlLabel, Switch } from '@material-ui/core';
-import { SectionHeader, OverlapedImages } from 'components/molecules';
+import { SectionHeader } from 'components/molecules';
 
 const query = graphql`
   {
@@ -69,7 +69,7 @@ const ModifyInterior = props => {
           />
           <Img
             fluid={state.checkedB === true ? data.img2.fluid : data.img1.fluid}
-            alt="obrazek"
+            alt="obrazek Domu interier"
             style={{ height: '100%', width: '100%' }}
           />
         </Grid>

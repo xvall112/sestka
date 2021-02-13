@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { useMediaQuery } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 
@@ -61,10 +61,6 @@ const SwiperImage = props => {
     ...rest
   } = props;
 
-  const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
-  });
   const classes = useStyles();
 
   return (
@@ -80,7 +76,7 @@ const SwiperImage = props => {
         <SwiperSlide className={clsx(classes.swiperSlide)} key={index}>
           <Img
             fluid={item.fluid}
-            alt="obrazek"
+            alt="obrazekDomu"
             style={{ height: '100%' }}
             className={clsx(
               classes.image,

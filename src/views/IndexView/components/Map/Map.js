@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet';
+import L from 'leaflet';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,27 +30,41 @@ const Map = props => {
   const { zoom, center, pins, className, ...rest } = props;
 
   const classes = useStyles();
-
-  React.useEffect(() => {
-    const L = require('leaflet');
-    delete L.Icon.Default.prototype._getIconUrl;
-
-    const markerIcon2x = require('assets/images/leaflet-assets/marker-icon-2x.png');
-    const markerIcon = require('assets/images/leaflet-assets/marker-icon.png');
-    const markerShadow = require('assets/images/leaflet-assets/marker-shadow.png');
-
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl:
-        typeof markerIcon2x === 'object' ? markerIcon2x.default : markerIcon2x,
-      iconUrl: typeof markerIcon === 'object' ? markerIcon.default : markerIcon,
-      shadowUrl:
-        typeof markerShadow === 'object' ? markerShadow.default : markerShadow,
-    });
+  const markerIconHouse = new L.icon({
+    iconUrl: require('assets/images/leaflet-assets/house2.png'),
+    iconSize: [25, 40],
+    iconAnchor: [10, 40],
+    tooltipAnchor: [15, -20],
+    shadowUrl: require('assets/images/leaflet-assets/marker-shadow.png'),
   });
-
-  if (typeof window === 'undefined') {
-    return null;
-  }
+  const markerIconShopping = new L.icon({
+    iconUrl: require('assets/images/leaflet-assets/shopping.png'),
+    iconSize: [25, 40],
+    iconAnchor: [10, 40],
+    tooltipAnchor: [15, -20],
+    shadowUrl: require('assets/images/leaflet-assets/marker-shadow.png'),
+  });
+  const markerIconHospital = new L.icon({
+    iconUrl: require('assets/images/leaflet-assets/hospital.png'),
+    iconSize: [25, 40],
+    iconAnchor: [10, 40],
+    tooltipAnchor: [15, -20],
+    shadowUrl: require('assets/images/leaflet-assets/marker-shadow.png'),
+  });
+  const markerIconBus = new L.icon({
+    iconUrl: require('assets/images/leaflet-assets/bus.png'),
+    iconSize: [25, 40],
+    iconAnchor: [10, 40],
+    tooltipAnchor: [15, -20],
+    shadowUrl: require('assets/images/leaflet-assets/marker-shadow.png'),
+  });
+  const markerIconCar = new L.icon({
+    iconUrl: require('assets/images/leaflet-assets/car.png'),
+    iconSize: [25, 40],
+    iconAnchor: [10, 40],
+    tooltipAnchor: [15, -20],
+    shadowUrl: require('assets/images/leaflet-assets/marker-shadow.png'),
+  });
 
   return (
     <MapContainer
@@ -68,6 +83,17 @@ const Map = props => {
         pins.length &&
         pins.map((item, i) => (
           <Marker
+            icon={
+              item.icon === 'hospital'
+                ? markerIconHospital
+                : item.icon === 'house'
+                ? markerIconHouse
+                : item.icon === 'shopping'
+                ? markerIconShopping
+                : item.icon === 'car'
+                ? markerIconCar
+                : markerIconBus
+            }
             className="map__marker"
             position={[item.location.y, item.location.x]}
             key={i}

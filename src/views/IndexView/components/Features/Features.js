@@ -9,7 +9,6 @@ import {
   ListItemAvatar,
   Typography,
   Avatar,
-  Button,
   Box,
 } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
@@ -33,23 +32,7 @@ const useStyles = makeStyles(theme => ({
   gridItemPositioned: {
     marginTop: '25%',
   },
-  iconCover: {
-    width: 60,
-    height: 60,
-    background:
-      'url(https://assets.maccarianagency.com/the-front/illustrations/bgicon.svg) no-repeat center center',
-    backgroundSize: 'contain',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: colors.red[500],
-    fontSize: 35,
-    [theme.breakpoints.up('md')]: {
-      width: 80,
-      height: 80,
-      fontSize: 50,
-    },
-  },
+
   propsGrid: {
     height: '100%',
   },

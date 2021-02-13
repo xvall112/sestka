@@ -1,9 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { useMediaQuery, Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
 
@@ -47,10 +46,6 @@ const query = graphql`
 const Services = ({ className, ...rest }) => {
   const data = useStaticQuery(query);
   const classes = useStyles();
-  const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
-  });
 
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
