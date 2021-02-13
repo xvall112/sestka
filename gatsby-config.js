@@ -34,6 +34,7 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-react-leaflet',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

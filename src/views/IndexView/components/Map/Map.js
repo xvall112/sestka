@@ -2,8 +2,9 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet';
+import { TileLayer, Marker, Tooltip } from 'react-leaflet';
 import L from 'leaflet';
+import { MapContainer } from 'react-leaflet';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,10 +27,13 @@ const useStyles = makeStyles(theme => ({
  *
  * @param {Object} props
  */
-const Map = props => {
+const Maps = props => {
   const { zoom, center, pins, className, ...rest } = props;
 
   const classes = useStyles();
+  if (typeof window === 'undefined') {
+    return null;
+  }
   const markerIconHouse = new L.icon({
     iconUrl: require('assets/images/leaflet-assets/house2.png'),
     iconSize: [25, 40],
@@ -105,9 +109,9 @@ const Map = props => {
   );
 };
 
-Map.defaultProps = {
+Maps.defaultProps = {
   zoom: 12,
   center: [0, 0],
 };
 
-export default Map;
+export default Maps;
