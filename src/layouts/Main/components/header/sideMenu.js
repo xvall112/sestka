@@ -59,7 +59,12 @@ const SideMenu = () => {
 
   return (
     <div className={classes.root}>
-      <IconButton color="inherit" aria-label="menu" onClick={handleDrawerOpen}>
+      <IconButton
+        color="inherit"
+        aria-label="menu"
+        onClick={handleDrawerOpen}
+        type="button"
+      >
         <MenuIcon />
       </IconButton>
       <Drawer open={open} anchor="right" onClick={handleDrawerClose}>
@@ -131,6 +136,7 @@ const SideMenu = () => {
               color="primary"
               variant="outlined"
               startIcon={<PhoneAndroidIcon />}
+              type="button"
             >
               {contact.mobile}
             </Button>
@@ -140,6 +146,7 @@ const SideMenu = () => {
             color="primary"
             variant="outlined"
             startIcon={<EmailIcon />}
+            type="button"
           >
             napište nám
           </Button>
@@ -149,6 +156,7 @@ const SideMenu = () => {
               direction="row"
               justify="center"
               alignItems="center"
+              type="button"
             >
               <Button color="primary" href={contact.instagram}>
                 <InstagramIcon fontSize="large" />

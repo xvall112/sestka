@@ -49,6 +49,7 @@ const Header = () => {
             <Grid item>
               <Box display={{ xs: 'none', sm: 'inline' }}>
                 <Button
+                  type="button"
                   href={`mailto:${contact.email}`}
                   className={classes.button}
                   variant="outlined"
@@ -59,6 +60,7 @@ const Header = () => {
               </Box>
 
               <Button
+                type="button"
                 className={classes.button}
                 variant="outlined"
                 startIcon={<PhoneAndroidIcon />}
@@ -71,6 +73,7 @@ const Header = () => {
               <Grid container direction="row">
                 <Box display={{ xs: 'none', sm: 'inline' }}>
                   <IconButton
+                    type="button"
                     href={contact.facebook}
                     color="inherit"
                     aria-label="menu"
@@ -78,6 +81,7 @@ const Header = () => {
                     <FacebookIcon />
                   </IconButton>
                   <IconButton
+                    type="button"
                     color="inherit"
                     aria-label="menu"
                     href={contact.instagram}

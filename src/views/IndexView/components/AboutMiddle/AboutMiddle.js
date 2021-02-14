@@ -110,6 +110,7 @@ const AboutMiddle = props => {
                   variant="contained"
                   size="large"
                   onClick={() => scrollTo('#contact')}
+                  type="button"
                 >
                   kontakt
                 </Button>,

@@ -190,7 +190,12 @@ const Card = ({ item }) => {
             <Divider className={classes.divider} />
             <Grid item container justify="center" xs={12}>
               <Link to={`/dum/${item.node.slug}`}>
-                <Button variant="outlined" color="primary" size="large">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  type="button"
+                >
                   Vstoupit do {item.node.name}
                 </Button>
               </Link>

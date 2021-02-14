@@ -59,6 +59,7 @@ const SellProperty = props => {
                   variant="contained"
                   size="large"
                   onClick={() => scrollTo('#house')}
+                  type="button"
                 >
                   Vyberte si dům
                 </Button>,

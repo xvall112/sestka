@@ -74,6 +74,7 @@ const Hero = props => {
             ctaGroup={[
               <Button
                 className={classes.buttons}
+                type="button"
                 variant="contained"
                 color="primary"
                 size="large"
@@ -88,6 +89,7 @@ const Hero = props => {
                 size="large"
                 className={classes.buttons}
                 onClick={() => scrollTo('#house')}
+                type="button"
               >
                 domy
               </Button>,

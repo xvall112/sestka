@@ -16,7 +16,6 @@ import {
   TextField,
   Button,
 } from '@material-ui/core';
-import { SectionHeader } from 'components/molecules';
 import { contact } from '../../../../views/IndexView/data/index';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -223,6 +222,7 @@ const Contact = props => {
                 Jméno
               </Typography>
               <TextField
+                label="Vaše jméno"
                 placeholder="Vaše jméno"
                 variant="outlined"
                 size="medium"

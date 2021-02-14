@@ -1,4 +1,5 @@
 import '@fontsource/dm-sans';
+import '@fontsource/dm-sans/400.css';
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 import { sessionStorage } from 'utils';
 
@@ -13,7 +14,7 @@ const theme = responsiveFontSizes(
       contentWidth: 1236,
     },
     typography: {
-      fontFamily: 'DM-Sans',
+      fontFamily: 'DM Sans',
     },
     zIndex: {
       appBar: 1200,
@@ -28,6 +29,15 @@ const theme = responsiveFontSizes(
       },
       MuiChip: {
         root: { borderRadius: '5px' },
+      },
+      MuiFormHelperText: {
+        root: { backgroundColor: '#F7F9FA' },
+        contained: {
+          marginRight: 0,
+          marginLeft: 0,
+          paddingLeft: '14px;',
+          paddingRight: '14px;',
+        },
       },
     },
   }),

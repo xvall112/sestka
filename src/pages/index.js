@@ -12,7 +12,7 @@ const IndexPage = () => {
   return (
     <div className="container">
       <Main>
-        <SEO title="Home" />
+        <SEO title="Šestka" />
         <IndexView />
       </Main>
     </div>
