@@ -50,7 +50,6 @@ const PhotoGallery = props => {
             fontIconClass="fas fa-images"
             size="medium"
             color={colors.pink}
-            shape="circle"
           />
         }
         title="Galerie"

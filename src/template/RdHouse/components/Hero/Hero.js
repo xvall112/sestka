@@ -1,23 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import Img from 'gatsby-image';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import {
-  FormControl,
-  OutlinedInput,
-  InputAdornment,
-  Button,
-  Container,
-  Grid,
-} from '@material-ui/core';
-import { CardJobMinimal, Card } from 'components/organisms';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+import { CardJobMinimal } from 'components/organisms';
 import CardJobMinimalPrice from '../CardJobMinimalPrice/CardJobMinimalPrice';
-import SwiperImage from '../SwiperImage/SwiperImage';
-import { Icon, Image } from 'components/atoms';
+
 import { SectionHeader } from 'components/molecules';
-import { Section, SectionAlternate } from 'components/organisms';
+import { Section } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -108,7 +100,6 @@ const Hero = props => {
     ...rest
   } = props;
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <div>
@@ -170,6 +161,8 @@ const Hero = props => {
                   subtitle={
                     contentfulRdHouse.stav.stav === 'prodáno'
                       ? 'PRODÁNO'
+                      : contentfulRdHouse.stav.stav === 'rezervováno'
+                      ? 'REZERVOVÁNO'
                       : `${contentfulRdHouse.cena} Kč`
                   }
                 />

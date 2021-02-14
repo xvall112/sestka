@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, Typography, Button } from '@material-ui/core';
+import {
+  useMediaQuery,
+  Grid,
+  colors,
+  Button,
+  Typography,
+} from '@material-ui/core';
 import { Icon } from 'components/atoms';
-import { SectionHeader } from 'components/molecules';
+
 import { CardPricingStandard } from 'components/organisms';
 import { IconAlternate } from 'components/molecules';
-import { DescriptionListIcon, CardJobMinimal } from 'components/organisms';
-import { colors } from '@material-ui/core';
+import { DescriptionListIcon } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   descriptionListIcon: {
@@ -43,7 +48,6 @@ const Pricings = props => {
             fontIconClass="fas fa-dollar-sign"
             size="medium"
             color={colors.pink}
-            shape="circle"
           />
         }
         title="Cena"
@@ -57,7 +61,7 @@ const Pricings = props => {
         alignItems="center"
         spacing={isMd ? 4 : 2}
       >
-        <Grid item xs={12} md={4} data-aos="fade-up">
+        <Grid item xs={12} md={5} data-aos="fade-up">
           <CardPricingStandard
             variant="outlined"
             withShadow={true}
@@ -69,10 +73,12 @@ const Pricings = props => {
                 <Typography variant="h3" component="span">
                   {contentfulRdHouse.stav.stav === 'prodáno'
                     ? 'PRODÁNO'
+                    : contentfulRdHouse.stav.stav === 'rezervováno'
+                    ? 'REZERVOVÁNO'
                     : contentfulRdHouse.cena}
                 </Typography>
                 <Typography component="span" variant="subtitle1">
-                  {contentfulRdHouse.stav.stav === 'prodáno' ? '' : 'Kč'}
+                  {contentfulRdHouse.stav.stav === 'volné' ? 'Kč' : ' '}
                 </Typography>
               </div>
             }
@@ -91,7 +97,11 @@ const Pricings = props => {
                   fullWidth
                   size="large"
                   disabled={
-                    contentfulRdHouse.stav.stav === 'prodáno' ? true : false
+                    contentfulRdHouse.stav.stav === 'prodáno'
+                      ? true
+                      : contentfulRdHouse.stav.stav === 'rezervováno'
+                      ? true
+                      : false
                   }
                 >
                   mám zájem

@@ -13,7 +13,7 @@ export const query = graphql`
   {
     contentfulKontaktImages {
       images {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 500) {
           ...GatsbyContentfulFluid
         }
       }
@@ -47,9 +47,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   contactImg: {
-    marginBottom: theme.spacing(1),
+    marginTop: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
-      marginBottom: theme.spacing(0),
+      marginTop: theme.spacing(0),
     },
   },
   textWhite: {

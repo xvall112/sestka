@@ -33,7 +33,6 @@ const Pozemek = props => {
             fontIconClass="fas fa-mountain"
             size="medium"
             color={colors.pink}
-            shape="circle"
           />
         }
         title="Pozemek"

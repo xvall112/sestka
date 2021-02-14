@@ -8,6 +8,13 @@ import Layout from '../../layouts/Main';
 import Gallery from './components/gallery/gallery';
 import Pricings from './components/Pricings/Pricings';
 import Pozemek from './components/pozemek/pozemek';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  sectionNoPaddingTop: {
+    paddingTop: 0,
+  },
+}));
 
 export const query = graphql`
   query($slug: String!) {
@@ -77,6 +84,7 @@ export const query = graphql`
 `;
 
 const House = props => {
+  const classes = useStyles();
   return (
     <div>
       <Layout>
@@ -85,13 +93,13 @@ const House = props => {
         <Section>
           <Pozemek data={props} />
         </Section>
-        <Section>
+        <Section className={classes.sectionNoPaddingTop}>
           <Info data={props} />
         </Section>
-        <Section>
+        <Section className={classes.sectionNoPaddingTop}>
           <Gallery data={props} />
         </Section>
-        <Section>
+        <Section className={classes.sectionNoPaddingTop}>
           <Pricings data={props} />
         </Section>
       </Layout>

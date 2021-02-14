@@ -37,7 +37,6 @@ const Info = props => {
                 fontIconClass="fas fa-info"
                 size="medium"
                 color={colors.pink}
-                shape="circle"
               />
             }
             title="Detailní informace"
@@ -90,7 +89,6 @@ const Info = props => {
                 fontIconClass="fas fa-home"
                 size="medium"
                 color={colors.pink}
-                shape="circle"
               />
             }
             title="Vybavení"
@@ -143,7 +141,6 @@ const Info = props => {
                 fontIconClass="fas fa-file-alt"
                 size="medium"
                 color={colors.pink}
-                shape="circle"
               />
             }
             title="Stručný popis"
@@ -165,7 +162,6 @@ const Info = props => {
                 fontIconClass="fas fa-cog"
                 size="medium"
                 color={colors.pink}
-                shape="circle"
               />
             }
             title="Technické informace"
