@@ -65,9 +65,12 @@ const Pricings = props => {
           <CardPricingStandard
             variant="outlined"
             withShadow={true}
-            title={`Cena za ${contentfulRdHouse.name}`}
+            title={`Aktuální cena za ${contentfulRdHouse.name} včetně  pozemku `}
             liftUp
-            subtitle="Rozestavenost"
+            subtitle={
+              contentfulRdHouse.stav.stav === ('volné' || 'rezervováno') &&
+              'mění se dle postupu prací, předpokládaná cena dokončeného domu 7 900 000 Kč - cena bude určena dle skutečně použitých materiálů a provedených prací.'
+            }
             priceComponent={
               <div>
                 <Typography variant="h3" component="span">
@@ -78,11 +81,17 @@ const Pricings = props => {
                     : contentfulRdHouse.cena}
                 </Typography>
                 <Typography component="span" variant="subtitle1">
-                  {contentfulRdHouse.stav.stav === 'volné' ? 'Kč' : ' '}
+                  {contentfulRdHouse.stav.stav === 'volné' ? ' Kč s DPH' : ' '}
                 </Typography>
               </div>
             }
-            features={['features', 'dalsi']}
+            features={
+              contentfulRdHouse.stav.stav === ('volné' || 'rezervováno') && [
+                'pozemek',
+                'základová deska',
+                'obvodové zdivo',
+              ]
+            }
             featureCheckComponent={
               <Icon
                 fontIconClass="far fa-check-circle"

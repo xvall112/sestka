@@ -222,7 +222,6 @@ const Contact = props => {
                 Jméno
               </Typography>
               <TextField
-                label="Vaše jméno"
                 placeholder="Vaše jméno"
                 variant="outlined"
                 size="medium"

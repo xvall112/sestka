@@ -29,7 +29,13 @@ const ModifyInterior = props => {
   };
   return (
     <div className={className} {...rest}>
-      <Grid container spacing={4}>
+      <Grid
+        container
+        spacing={4}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
         <Grid item xs={12} md={6}>
           <SectionHeader
             label="INTERIÉR"
@@ -41,7 +47,7 @@ const ModifyInterior = props => {
                 </Typography>
               </span>
             }
-            subtitle="Rather than worrying about switching offices every couple years, you can instead stay in the same location and grow-up from your shared coworking space to an office that takes up an entire floor."
+            subtitle="vnitřní dispozici a materiálové řešení interieru je možné upravit podle potřeb kupujícího"
             align="left"
             fadeUp
             disableGutter

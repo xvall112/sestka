@@ -46,12 +46,6 @@ const Info = props => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <CardJobMinimal
-                title="Typ nabídky"
-                subtitle={contentfulRdHouse.nabidka}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <CardJobMinimal
                 title="Typ objektu"
                 subtitle={contentfulRdHouse.objekt}
               />

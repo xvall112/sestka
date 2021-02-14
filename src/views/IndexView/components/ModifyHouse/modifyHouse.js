@@ -2,14 +2,20 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, useMediaQuery } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
 import Gif from '../../../../assets/gi/animateColor.gif';
 
+const useStyles = makeStyles(theme => ({
+  list: {
+    listStyle: 'none',
+  },
+}));
+
 const ModifyHouse = props => {
   const { className, ...rest } = props;
-
+  const classes = useStyles();
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -17,7 +23,13 @@ const ModifyHouse = props => {
 
   return (
     <div className={className} {...rest}>
-      <Grid container direction={isMd ? 'row' : 'column-reverse'} spacing={4}>
+      <Grid
+        container
+        direction={isMd ? 'row' : 'column-reverse'}
+        spacing={4}
+        justify="center"
+        alignItems="center"
+      >
         <Grid
           item
           xs={12}
@@ -40,7 +52,14 @@ const ModifyHouse = props => {
                 </Typography>
               </span>
             }
-            subtitle="Rather than worrying about switching offices every couple years, you can instead stay in the same location and grow-up from your shared coworking space to an office that takes up an entire floor."
+            subtitle={
+              <ul className={classes.list}>
+                <li>Barevné řešení - okna , fasáda</li>
+                <li>Zpevněné plochy - vnitřní stání, chodník</li>
+                <li>Chodník - možno provést podle výběru kupujícího</li>
+                <li>Na střešní folii je lze položit 'zelenou střechu'</li>
+              </ul>
+            }
             align="left"
             fadeUp
             disableGutter

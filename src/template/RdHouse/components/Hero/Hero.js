@@ -157,13 +157,13 @@ const Hero = props => {
             <Grid container spacing={2}>
               <Grid item xs={12} data-aos="fade-up">
                 <CardJobMinimalPrice
-                  title="Cena"
+                  title="Aktuální cena"
                   subtitle={
                     contentfulRdHouse.stav.stav === 'prodáno'
                       ? 'PRODÁNO'
                       : contentfulRdHouse.stav.stav === 'rezervováno'
                       ? 'REZERVOVÁNO'
-                      : `${contentfulRdHouse.cena} Kč`
+                      : `${contentfulRdHouse.cena} Kč s DPH`
                   }
                 />
               </Grid>
