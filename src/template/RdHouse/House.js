@@ -58,6 +58,11 @@ export const query = graphql`
         }
       }
       rokVystavby
+      seoImage {
+        file {
+          url
+        }
+      }
       sklep
       slug
       stav {
@@ -88,7 +93,11 @@ const House = props => {
   return (
     <div>
       <Layout>
-        <SEO title={props.data.contentfulRdHouse.name} />
+        <SEO
+          title={props.data.contentfulRdHouse.name}
+          url={props.data.contentfulRdHouse.slug}
+          image={props.data.contentfulRdHouse.seoImage.file.url}
+        />
         <Hero data={props} />
         <Section>
           <Pozemek data={props} />

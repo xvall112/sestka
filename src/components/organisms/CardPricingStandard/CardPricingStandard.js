@@ -148,7 +148,7 @@ CardPricingStandard.propTypes = {
   /**
    *  Subtitle of the pricing card
    */
-  subtitle: PropTypes.string,
+
   /**
    * The pricing component of the pricing card
    */
@@ -160,7 +160,7 @@ CardPricingStandard.propTypes = {
   /**
    * Features array of the pricing card
    */
-  features: PropTypes.array,
+
   /**
    *  CTA button of the pricing card
    */

@@ -69,10 +69,14 @@ const Pricings = props => {
             liftUp
             subtitle={
               contentfulRdHouse.stav.stav === ('volné' || 'rezervováno') &&
-              'mění se dle postupu prací, předpokládaná cena dokončeného domu 7 900 000 Kč - cena bude určena dle skutečně použitých materiálů a provedených prací.'
+              'se mění dle postupu prací, předpokládaná cena dokončeného domu 7 900 000 Kč - cena bude určena dle skutečně použitých materiálů a provedených prací.'
             }
             priceComponent={
               <div>
+                <Typography component="span" variant="subtitle1">
+                  Aktuální cena:
+                </Typography>
+                <br></br>
                 <Typography variant="h3" component="span">
                   {contentfulRdHouse.stav.stav === 'prodáno'
                     ? 'PRODÁNO'
@@ -85,13 +89,13 @@ const Pricings = props => {
                 </Typography>
               </div>
             }
-            features={
+            /* features={
               contentfulRdHouse.stav.stav === ('volné' || 'rezervováno') && [
                 'pozemek',
                 'základová deska',
                 'obvodové zdivo',
               ]
-            }
+            } */
             featureCheckComponent={
               <Icon
                 fontIconClass="far fa-check-circle"
