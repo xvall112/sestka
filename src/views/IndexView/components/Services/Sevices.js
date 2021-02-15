@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   noPaddingBottom: {
     paddingBottom: 0,
+    paddingTop: 0,
   },
   noPaddingTop: {
     paddingTop: 0,

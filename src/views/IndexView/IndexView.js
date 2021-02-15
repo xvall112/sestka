@@ -27,9 +27,9 @@ const useStyles = makeStyles(theme => ({
       paddingBottom: 0,
     },
   },
+
   dividerSection: {
     paddingTop: 0,
-    paddingBottom: 0,
   },
 }));
 
@@ -45,13 +45,13 @@ const IndexView = () => {
       <Section>
         <HouseAdvertising />
       </Section>
-      <Section>
+      <Section className={classes.dividerSection}>
         <ModifyHouse />
       </Section>
-      <Section>
+      <Section className={classes.dividerSection}>
         <ModifyInterior />
       </Section>
-      <Section>
+      <Section className={classes.dividerSection}>
         <Features data={features} />
       </Section>
       <SellProperty />
@@ -59,9 +59,7 @@ const IndexView = () => {
         <Services />
       </SectionAlternate>
       <AboutMiddle />
-      <Section className={classes.dividerSection}>
-        <Divider />
-      </Section>
+
       {/*  <Section narrow>
         <GetStarted />
       </Section> */}
