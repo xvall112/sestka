@@ -8,11 +8,9 @@ import theme from './src/theme';
 import AOS from 'aos';
 
 import 'react-lazy-load-image-component/src/effects/opacity.css';
-import 'leaflet/dist/leaflet.css';
+import 'swiper/swiper.scss';
 import 'assets/css/index.css';
-
-import 'swiper/swiper.min.css';
-
+import 'swiper/components/pagination/pagination.min.css';
 export default function TopLayout(props) {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
