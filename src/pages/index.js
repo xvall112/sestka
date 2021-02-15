@@ -11,9 +11,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const query = graphql`
   {
-    contentfulAsset(file: { fileName: { eq: "ACCamera_4.jpg" } }) {
-      fluid(maxWidth: 500) {
-        ...GatsbyContentfulFluid
+    contentfulAsset(file: { fileName: { eq: "seoImage.jpg" } }) {
+      file {
+        url
       }
     }
   }
@@ -24,7 +24,7 @@ const IndexPage = () => {
   return (
     <div className="container">
       <Main>
-        <SEO title="Šestka" images={data.contentfulAsset.fluid} />
+        <SEO title="Šestka" images={data.contentfulAsset.file.url} />
         <IndexView />
       </Main>
     </div>
