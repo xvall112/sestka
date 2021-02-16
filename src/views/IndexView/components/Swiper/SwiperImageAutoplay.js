@@ -42,7 +42,6 @@ const useStyles = makeStyles(theme => ({
       left: 'auto !important',
     },
   },
-  image: {},
 }));
 
 /**
@@ -79,10 +78,6 @@ const SwiperImage = props => {
             fluid={item.fluid}
             alt="obrazekDomu"
             style={{ height: '100%' }}
-            className={clsx(
-              classes.image,
-              imageClassName ? imageClassName : {},
-            )}
           />
         </SwiperSlide>
       ))}

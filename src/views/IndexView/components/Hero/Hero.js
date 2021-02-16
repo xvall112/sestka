@@ -30,7 +30,7 @@ const query = graphql`
     contentfulLandingPageImage {
       images {
         fluid(maxWidth: 1000) {
-          src
+          ...GatsbyContentfulFluid
         }
       }
     }
