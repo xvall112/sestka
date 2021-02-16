@@ -153,7 +153,23 @@ const Hero = props => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={4}>
+          {contentfulRdHouse.stav.stav !== 'volné' && (
+            <Grid item xs={12} md={4}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} data-aos="fade-up">
+                  <CardJobMinimalPrice
+                    title=""
+                    subtitle={
+                      contentfulRdHouse.stav.stav === 'prodáno'
+                        ? 'PRODÁNO'
+                        : 'REZERVOVÁNO'
+                    }
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+          )}
+          {/*  <Grid item xs={12} md={4}>
             <Grid container spacing={2}>
               <Grid item xs={12} data-aos="fade-up">
                 <CardJobMinimalPrice
@@ -168,7 +184,7 @@ const Hero = props => {
                 />
               </Grid>
             </Grid>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Section>
     </div>

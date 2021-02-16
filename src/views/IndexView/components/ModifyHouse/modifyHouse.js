@@ -9,7 +9,7 @@ import Gif from '../../../../assets/gi/animateColor.gif';
 
 const useStyles = makeStyles(theme => ({
   list: {
-    listStyle: 'none',
+    listStyle: 'inside',
   },
 }));
 
@@ -55,9 +55,9 @@ const ModifyHouse = props => {
             subtitle={
               <ul className={classes.list}>
                 <li>Barevné řešení - okna , fasáda</li>
-                <li>Zpevněné plochy - vnitřní stání, chodník</li>
+                <li>Zpevněné plochy - vnitřní stání</li>
                 <li>Chodník - možno provést podle výběru kupujícího</li>
-                <li>Na střešní folii je lze položit 'zelenou střechu'</li>
+                <li>Na střešní folii lze položit 'zelenou střechu'</li>
               </ul>
             }
             align="left"

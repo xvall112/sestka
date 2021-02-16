@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import {
   useMediaQuery,
@@ -9,8 +8,8 @@ import {
   Button,
   Typography,
 } from '@material-ui/core';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { Icon } from 'components/atoms';
-
 import { CardPricingStandard } from 'components/organisms';
 import { IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
@@ -103,23 +102,22 @@ const Pricings = props => {
               />
             }
             cta={
-              <Link to="#contact">
-                <Button
-                  color="primary"
-                  variant="contained"
-                  fullWidth
-                  size="large"
-                  disabled={
-                    contentfulRdHouse.stav.stav === 'prodáno'
-                      ? true
-                      : contentfulRdHouse.stav.stav === 'rezervováno'
-                      ? true
-                      : false
-                  }
-                >
-                  mám zájem
-                </Button>
-              </Link>
+              <Button
+                color="primary"
+                variant="contained"
+                fullWidth
+                size="large"
+                disabled={
+                  contentfulRdHouse.stav.stav === 'prodáno'
+                    ? true
+                    : contentfulRdHouse.stav.stav === 'rezervováno'
+                    ? true
+                    : false
+                }
+                onClick={() => scrollTo('#contact')}
+              >
+                mám zájem
+              </Button>
             }
             disclaimer=""
           />
