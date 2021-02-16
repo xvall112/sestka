@@ -9,7 +9,7 @@ import { SectionHeader } from 'components/molecules';
 
 const query = graphql`
   {
-    contentfulAsset(file: { fileName: { eq: "RD2.jpg" } }) {
+    contentfulAsset(file: { fileName: { eq: "RD2.png" } }) {
       fluid(maxWidth: 600) {
         ...GatsbyContentfulFluid
       }

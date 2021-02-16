@@ -1,12 +1,26 @@
-import React, { useState, useCallback } from 'react';
-import Gallery from 'react-photo-gallery';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { IconAlternate } from 'components/molecules';
 import { DescriptionListIcon } from 'components/organisms';
 import { colors } from '@material-ui/core';
+import ImageGallery from 'react-image-gallery';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    '& .image-gallery-icon': {
+      color: theme.palette.primary.main,
+    },
+    '& .image-gallery-thumbnail.active': {
+      borderColor: theme.palette.primary.main,
+    },
+    '& .image-gallery-thumbnail:hover': {
+      borderColor: theme.palette.primary.main,
+    },
+    '& .image-gallery-thumbnail:focus': {
+      borderColor: theme.palette.primary.main,
+    },
+  },
   descriptionListIcon: {
     marginBottom: theme.spacing(2),
   },
@@ -18,32 +32,19 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const PhotoGallery = props => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
-
-  const openLightbox = useCallback((event, { photo, index }) => {
-    setCurrentImage(index);
-    setViewerIsOpen(true);
-  }, []);
-
-  const closeLightbox = () => {
-    setCurrentImage(0);
-    setViewerIsOpen(false);
-  };
-
   const {
     data: {
       data: { contentfulRdHouse },
     },
   } = props;
 
-  const photos = contentfulRdHouse.obrazky.map((photo, index) => {
-    return { src: photo.file.url, width: 4, height: 3 };
+  const images = contentfulRdHouse.galery.images.map((photo, index) => {
+    return { original: photo.file.url, thumbnail: photo.file.url };
   });
 
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.root}>
       <DescriptionListIcon
         icon={
           <IconAlternate
@@ -56,21 +57,7 @@ const PhotoGallery = props => {
         align="left"
         className={classes.descriptionListIcon}
       />
-      <Gallery photos={photos} onClick={openLightbox} />
-      <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImage}
-              views={photos.map(x => ({
-                ...x,
-                srcset: x.srcSet,
-                caption: x.title,
-              }))}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway>
+      <ImageGallery showPlayButton={false} items={images} />
     </div>
   );
 };

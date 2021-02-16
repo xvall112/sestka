@@ -28,6 +28,16 @@ export const query = graphql`
       dispozice
       elektrina
       energetickaTrida
+      galery {
+        images {
+          file {
+            url
+          }
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
       garaz
       introImages {
         fluid {
@@ -41,14 +51,6 @@ export const query = graphql`
       nabidka
       name
       objekt
-      obrazky {
-        file {
-          url
-        }
-        fluid {
-          ...GatsbyContentfulFluid
-        }
-      }
       plochaParcely
       plochaZahrady
       plyn
@@ -58,9 +60,11 @@ export const query = graphql`
         }
       }
       rokVystavby
-      seoImage {
-        file {
-          url
+      seoImg {
+        image {
+          file {
+            url
+          }
         }
       }
       sklep
@@ -96,7 +100,7 @@ const House = props => {
         <SEO
           title={props.data.contentfulRdHouse.name}
           url={props.data.contentfulRdHouse.slug}
-          image={props.data.contentfulRdHouse.seoImage.file.url}
+          image={props.data.contentfulRdHouse.seoImg.image.file.url}
         />
         <Hero data={props} />
         <Section>

@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 
 const query = graphql`
   {
-    contentfulAsset(file: { fileName: { eq: "ACCamera_2.jpg" } }) {
+    contentfulAsset(file: { fileName: { eq: "ACCamera_2.png" } }) {
       fluid(maxWidth: 1000) {
         ...GatsbyContentfulFluid
       }

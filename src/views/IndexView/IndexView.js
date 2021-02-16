@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Divider, colors } from '@material-ui/core';
+import { makeStyles, colors } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 
 import {

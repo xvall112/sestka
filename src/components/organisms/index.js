@@ -12,7 +12,7 @@ export { default as Accordion } from './Accordion';
 export { default as HeroShaped } from './HeroShaped';
 export { default as CardProduct } from './CardProduct';
 export { default as HeroBackground } from './HeroBackground';
-export { default as HeroSideImage } from './HeroSideImage';
+
 export { default as CardPromo } from './CardPromo';
 export { default as CardCategoryLink } from './CardCategoryLink';
 export { default as HeroSimpleBackground } from './HeroSimpleBackground';
