@@ -5,4 +5,3 @@ export { default as DescriptionCta } from './DescriptionCta';
 
 export { default as OverlapedImages } from './OverlapedImages';
 export { default as SwiperNumber } from './SwiperNumber';
-export { default as TypedText } from './TypedText';

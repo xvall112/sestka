@@ -70,12 +70,7 @@ module.exports = {
     // 'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-resolve-src',
-    /* {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: `${__dirname}/pages`,
-      },
-    }, */
+
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {

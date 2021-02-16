@@ -7,7 +7,6 @@ import theme from './src/theme';
 
 import AOS from 'aos';
 
-import 'react-lazy-load-image-component/src/effects/opacity.css';
 import 'swiper/swiper.scss';
 import 'assets/css/index.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -29,17 +28,6 @@ export default function TopLayout(props) {
   return (
     <React.Fragment>
       <Helmet>
-        {/*   <meta charSet="utf-8" />
-        <meta lang="cs" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"
-          rel="stylesheet"
-        /> */}
         <script
           src="https://kit.fontawesome.com/4c273e6d43.js"
           crossOrigin="anonymous"
