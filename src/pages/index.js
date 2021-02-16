@@ -11,7 +11,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const query = graphql`
   {
-    contentfulAsset(file: { fileName: { eq: "ACCamera_4.png" } }) {
+    contentfulAsset(file: { fileName: { eq: "ACCamera_4.jpg" } }) {
       file {
         url
       }

@@ -7,13 +7,13 @@ import { SectionHeader } from 'components/molecules';
 
 const query = graphql`
   {
-    img1: contentfulAsset(file: { fileName: { eq: "interierCisty.png" } }) {
-      fluid(maxWidth: 500) {
+    img1: contentfulAsset(file: { fileName: { eq: "interierCisty.jpg" } }) {
+      fluid(maxWidth: 1000) {
         ...GatsbyContentfulFluid
       }
     }
-    img2: contentfulAsset(file: { fileName: { eq: "interier.png" } }) {
-      fluid(maxWidth: 500) {
+    img2: contentfulAsset(file: { fileName: { eq: "interier.jpg" } }) {
+      fluid(maxWidth: 1000) {
         ...GatsbyContentfulFluid
       }
     }

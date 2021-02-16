@@ -29,7 +29,7 @@ const query = graphql`
   {
     contentfulLandingPageImage {
       images {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 1000) {
           src
         }
       }

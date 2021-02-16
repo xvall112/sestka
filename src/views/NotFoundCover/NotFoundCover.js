@@ -8,7 +8,7 @@ import Img from 'gatsby-image';
 
 const query = graphql`
   {
-    contentfulAsset(file: { fileName: { eq: "ACCamera_2.png" } }) {
+    contentfulAsset(file: { fileName: { eq: "ACCamera_2.jpg" } }) {
       fluid {
         ...GatsbyContentfulFluid
       }
