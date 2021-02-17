@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 
 import Img from 'gatsby-image';
 
-import '../../../../../node_modules/swiper/components/navigation/navigation.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 /* import '../../../../../node_modules/swiper/components/pagination/pagination.min.css'; */
 
@@ -65,6 +65,7 @@ const SwiperImage = props => {
 
   return (
     <Swiper
+      speed={1500}
       autoplay
       pagination
       navigation
