@@ -9,7 +9,6 @@ import AOS from 'aos';
 
 import 'swiper/swiper.scss';
 import 'assets/css/index.css';
-import 'swiper/components/navigation/navigation.scss';
 import 'react-image-gallery/styles/scss/image-gallery.scss';
 export default function TopLayout(props) {
   React.useEffect(() => {
