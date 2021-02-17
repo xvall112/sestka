@@ -70,26 +70,35 @@ const Header = () => {
               </Button>
             </Grid>
             <Grid item>
-              <Grid container direction="row">
-                <Box display={{ xs: 'none', sm: 'inline' }}>
-                  <IconButton
-                    type="button"
-                    href={contact.facebook}
-                    color="inherit"
-                    aria-label="menu"
-                  >
-                    <FacebookIcon />
-                  </IconButton>
-                  <IconButton
-                    type="button"
-                    color="inherit"
-                    aria-label="menu"
-                    href={contact.instagram}
-                  >
-                    <InstagramIcon />
-                  </IconButton>
-                </Box>
-                <SideMenu />
+              <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <Box display={{ xs: 'none', sm: 'inline' }}>
+                    <IconButton
+                      type="button"
+                      href={contact.facebook}
+                      color="inherit"
+                      aria-label="Facebook"
+                    >
+                      <FacebookIcon />
+                    </IconButton>
+                    <IconButton
+                      type="button"
+                      color="inherit"
+                      aria-label="Instagram"
+                      href={contact.instagram}
+                    >
+                      <InstagramIcon />
+                    </IconButton>
+                  </Box>
+                </Grid>
+                <Grid item>
+                  <SideMenu />
+                </Grid>
               </Grid>
             </Grid>
           </Grid>

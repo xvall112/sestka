@@ -65,7 +65,7 @@ const SideMenu = () => {
         onClick={handleDrawerOpen}
         type="button"
       >
-        <MenuIcon />
+        <MenuIcon fontSize="large" />
       </IconButton>
       <Drawer open={open} anchor="right" onClick={handleDrawerClose}>
         <Grid container direction="column" justify="center" alignItems="center">
@@ -158,10 +158,18 @@ const SideMenu = () => {
               alignItems="center"
               type="button"
             >
-              <Button color="primary" href={contact.instagram}>
+              <Button
+                aria-label="instagram"
+                color="primary"
+                href={contact.instagram}
+              >
                 <InstagramIcon fontSize="large" />
               </Button>
-              <Button href={contact.facebook} color="primary">
+              <Button
+                aria-label="facebook"
+                href={contact.facebook}
+                color="primary"
+              >
                 <FacebookIcon fontSize="large" />
               </Button>
             </Grid>
