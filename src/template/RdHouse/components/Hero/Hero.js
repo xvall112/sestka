@@ -4,12 +4,13 @@ import Img from 'gatsby-image';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
 import { CardJobMinimal } from 'components/organisms';
 import CardJobMinimalPrice from '../CardJobMinimalPrice/CardJobMinimalPrice';
-
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
+import { CardPricingStandard } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -153,10 +154,11 @@ const Hero = props => {
               </Grid>
             </Grid>
           </Grid>
-          {contentfulRdHouse.stav.stav !== 'volné' && (
-            <Grid item xs={12} md={4}>
-              <Grid container spacing={2}>
-                <Grid item xs={12} data-aos="fade-up">
+
+          <Grid item xs={12} md={4}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} data-aos="fade-up">
+                {contentfulRdHouse.stav.stav !== 'volné' ? (
                   <CardJobMinimalPrice
                     title=""
                     subtitle={
@@ -165,10 +167,54 @@ const Hero = props => {
                         : 'REZERVOVÁNO'
                     }
                   />
-                </Grid>
+                ) : (
+                  <CardPricingStandard
+                    variant="outlined"
+                    title={`Aktuální cena za ${contentfulRdHouse.name} včetně  pozemku `}
+                    subtitle={
+                      contentfulRdHouse.stav.stav ===
+                        ('volné' || 'rezervováno') &&
+                      'se mění dle postupu prací, předpokládaná cena dokončeného domu 7 900 000 Kč - cena bude určena dle skutečně použitých materiálů a provedených prací.'
+                    }
+                    priceComponent={
+                      <div>
+                        <Typography component="span" variant="subtitle1">
+                          Aktuální cena:
+                        </Typography>
+                        <br></br>
+                        <Typography variant="h3" component="span">
+                          {contentfulRdHouse.cena}
+                        </Typography>
+                        <Typography component="span" variant="subtitle1">
+                          Kč s DPH
+                        </Typography>
+                      </div>
+                    }
+                    cta={
+                      <Button
+                        color="primary"
+                        variant="contained"
+                        fullWidth
+                        size="large"
+                        disabled={
+                          contentfulRdHouse.stav.stav === 'prodáno'
+                            ? true
+                            : contentfulRdHouse.stav.stav === 'rezervováno'
+                            ? true
+                            : false
+                        }
+                        onClick={() => scrollTo('#contact')}
+                      >
+                        mám zájem
+                      </Button>
+                    }
+                    disclaimer=""
+                  />
+                )}
               </Grid>
             </Grid>
-          )}
+          </Grid>
+
           {/*  <Grid item xs={12} md={4}>
             <Grid container spacing={2}>
               <Grid item xs={12} data-aos="fade-up">
