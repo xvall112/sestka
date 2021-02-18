@@ -58,7 +58,7 @@ const Hero = props => {
                 textAlign={isMd ? 'left' : 'center'}
               >
                 <Typography component="h2" variant="inherit" color="primary">
-                  "ŠESTKA"
+                  MŮJ DŮM, MOJE ŠESTKA
                 </Typography>
                 Rodinné domy na prodej <br></br>
               </Box>

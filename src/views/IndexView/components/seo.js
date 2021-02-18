@@ -30,7 +30,7 @@ const SEO = ({ title, description, image }) => {
   } = site.siteMetadata;
 
   const seo = {
-    title: `${title}|${siteTitle}`,
+    title: `${title} | ${siteTitle}`,
     description: description || siteDescription,
     image: `https:${image}` /* || `${siteUrl}${defaultImage}` */,
     url: `${siteUrl}${pathname}`,
