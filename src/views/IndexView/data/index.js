@@ -97,7 +97,7 @@ export const mapData = {
 
 export const contact = {
   mobile: '+420603262359',
-  email: 'sulik@sios.cz',
+  email: 'sestka.pribram@email.cz',
   facebook: 'https://www.facebook.com/SIOSCZ',
   instagram: '',
 };

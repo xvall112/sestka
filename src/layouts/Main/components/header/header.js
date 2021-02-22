@@ -47,7 +47,7 @@ const Header = () => {
               <Img fixed={data.logoImage.childImageSharp.fixed} />
             </Link>
             <Grid item>
-              <Box display={{ xs: 'none', sm: 'inline' }}>
+              <Box>
                 <Button
                   type="button"
                   href={`mailto:${contact.email}`}
@@ -59,7 +59,7 @@ const Header = () => {
                 </Button>
               </Box>
 
-              <Button
+              {/*   <Button
                 type="button"
                 className={classes.button}
                 variant="outlined"
@@ -67,7 +67,7 @@ const Header = () => {
                 href={`tel:${contact.mobile}`}
               >
                 {contact.mobile}
-              </Button>
+              </Button> */}
             </Grid>
             <Grid item>
               <Grid
@@ -86,14 +86,14 @@ const Header = () => {
                     >
                       <FacebookIcon />
                     </IconButton>
-                    <IconButton
+                    {/*  <IconButton
                       type="button"
                       color="inherit"
                       aria-label="Instagram"
                       href={contact.instagram}
                     >
                       <InstagramIcon />
-                    </IconButton>
+                    </IconButton> */}
                   </Box>
                 </Grid>
                 <Grid item>

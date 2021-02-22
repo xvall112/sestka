@@ -130,7 +130,7 @@ const SideMenu = () => {
             </Link>
             <Divider />
           </List>
-          <Box my={2}>
+          {/*   <Box my={2}>
             <Button
               href={`tel:${contact.mobile}`}
               color="primary"
@@ -140,7 +140,7 @@ const SideMenu = () => {
             >
               {contact.mobile}
             </Button>
-          </Box>
+          </Box> */}
           <Button
             href={`mailto:${contact.email}`}
             color="primary"
@@ -158,13 +158,13 @@ const SideMenu = () => {
               alignItems="center"
               type="button"
             >
-              <Button
+              {/*   <Button
                 aria-label="instagram"
                 color="primary"
                 href={contact.instagram}
               >
                 <InstagramIcon fontSize="large" />
-              </Button>
+              </Button> */}
               <Button
                 aria-label="facebook"
                 href={contact.facebook}

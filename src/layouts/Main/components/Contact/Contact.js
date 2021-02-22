@@ -124,7 +124,7 @@ const Contact = props => {
   return (
     <div className={className} {...rest}>
       <List disablePadding className={classes.list}>
-        <ListItem
+        {/*    <ListItem
           disableGutters
           data-aos="fade-up"
           className={classes.listItem}
@@ -150,7 +150,7 @@ const Contact = props => {
               }}
             />
           </a>
-        </ListItem>
+        </ListItem> */}
 
         <ListItem
           disableGutters

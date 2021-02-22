@@ -177,12 +177,12 @@ const Footer = props => {
                 >
                   <FacebookIcon className={classes.icon} />
                 </IconButton>
-                <IconButton
+                {/*    <IconButton
                   className={classes.socialIcon}
                   href={contact.instagram}
                 >
                   <InstagramIcon className={classes.icon} />
-                </IconButton>
+                </IconButton> */}
               </ListItem>
             </List>
           </Grid>
