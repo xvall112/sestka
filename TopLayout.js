@@ -4,9 +4,8 @@ import { Helmet } from 'react-helmet';
 import { CssBaseline, Paper } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './src/theme';
-
+import CookiesPanel from './src/views/IndexView/components/CookiePanel';
 import AOS from 'aos';
-
 import 'swiper/swiper.scss';
 import 'assets/css/index.css';
 import 'react-image-gallery/styles/scss/image-gallery.scss';

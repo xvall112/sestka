@@ -12,10 +12,10 @@ import {
   Button,
   Box,
 } from '@material-ui/core';
-import InstagramIcon from '@material-ui/icons/Instagram';
+/* import InstagramIcon from '@material-ui/icons/Instagram'; */
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
-import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+/* import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid'; */
 
 import { contact } from '../../../../views/IndexView/data/index';
 const query = graphql`
@@ -29,6 +29,7 @@ const query = graphql`
     }
   }
 `;
+
 const Header = () => {
   const classes = useStyles();
 
@@ -120,6 +121,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('md')]: { diplay: 'none', marginLeft: 0 },
   },
   appBar: {
+    zIndex: '10000',
     background: theme.backgroundGradient,
   },
 }));

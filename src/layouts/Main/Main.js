@@ -7,6 +7,7 @@ import { Divider } from '@material-ui/core';
 import { Footer } from './components';
 import Header from './components/header/header';
 import { SectionAlternate } from 'components/organisms';
+import CookiesPanel from '../../views/IndexView/components/CookiePanel';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,15 +27,14 @@ const Main = props => {
       })}
     >
       <Header />
+      <Divider />
 
-      <main>
-        <Divider />
-        {children}
-      </main>
+      <main>{children}</main>
       <SectionAlternate id="contact">
         <Contact />
       </SectionAlternate>
       <Footer />
+      <CookiesPanel />
     </div>
   );
 };
