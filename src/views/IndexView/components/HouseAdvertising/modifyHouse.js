@@ -58,7 +58,7 @@ const ModifyHouse = props => {
           <Img
             fluid={data.contentfulAsset.fluid}
             alt="obrazek domu zpredu"
-            style={{ height: '100%', width: '100%', borderRadius: '10px' }}
+            style={{ height: '100%', width: '100%', borderRadius: '5px' }}
           />
         </Grid>
       </Grid>

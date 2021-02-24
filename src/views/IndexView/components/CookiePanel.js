@@ -12,7 +12,7 @@ const CookiePanel = () => {
       buttonStyle={{
         color: 'black',
         backgroundColor: '#e0e0e0',
-        borderRadius: '10px',
+        borderRadius: '5px',
       }}
     >
       Tento web používá k poskytování služeb soubory cookie.

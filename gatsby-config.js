@@ -8,7 +8,7 @@ module.exports = {
       'Bydlení v přírodě s vlastním pozemkem a garáží. Minimalistické, moderní a pohodlné bydlení s naprostým soukromím! S docházkovou vzdáleností do centra Příbrami.',
     /* `Na prodej šest rodinných domů s vlastním pozemkem a garáží na Sázkách pár minut do Prahy vedle Příbrami`, */
     author: `@sios`,
-    siteUrl: 'https://pensive-raman-03684b.netlify.app',
+    siteUrl: 'https://rdsestka.cz',
     lang: 'cs',
     image: '/src/assets/images/logo.png',
     keywords: [

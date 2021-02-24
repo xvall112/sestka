@@ -9,7 +9,7 @@ import Gif from '../../../../assets/gi/animateColor.gif';
 
 const useStyles = makeStyles(theme => ({
   list: {
-    listStyle: 'inside',
+    listStyle: 'none',
   },
 }));
 

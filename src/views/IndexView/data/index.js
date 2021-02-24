@@ -24,15 +24,15 @@ export const promoNumbers = [
 export const features = {
   properties: [
     {
-      title: 'Od sjezdu na dálnici do Prahy Vás dělí 5 minut.',
+      title: ' Nájezd na dálnici 5 minut.',
       avatar: house2,
     },
     {
-      title: 'Do samotné Prahy dojedete za 50 minut.',
+      title: 'V Praze za 40 minut.',
       avatar: '/src/assets/images/leaflet-assets/house2.png',
     },
     {
-      title: 'Do centra Příbrami pouhé 2 minuty autem ',
+      title: 'Do centra Příbrami 2 minuty',
       avatar: '/src/assets/images/leaflet-assets/house2.png',
     },
     {
@@ -40,11 +40,11 @@ export const features = {
       avatar: '/src/assets/images/leaflet-assets/house2.png',
     },
     {
-      title: 'V Bille za 3 minuty, Albert 4 minuty, Tesco 7 min',
+      title: 'Billa 3 minuty, Albert 4 minuty, Tesco 7 min',
       avatar: '/src/assets/images/leaflet-assets/house2.png',
     },
     {
-      title: 'Autobusová zastávka - 1 minutu od domu.',
+      title: 'Autobusová zastávka 100 metrů',
       avatar: '/src/assets/images/leaflet-assets/house2.png',
     },
   ],

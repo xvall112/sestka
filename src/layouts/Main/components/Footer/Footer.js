@@ -11,8 +11,9 @@ import {
   List,
   ListItem,
 } from '@material-ui/core';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
+/* import InstagramIcon from '@material-ui/icons/Instagram'; */
 import { contact } from '../../../../views/IndexView/data/index';
 
 const query = graphql`
@@ -59,6 +60,9 @@ const useStyles = makeStyles(theme => ({
   logoContainer: {
     width: 120,
     height: 32,
+    '& :hover': {
+      cursor: 'pointer',
+    },
   },
   logoImage: {
     width: '100%',
@@ -161,13 +165,14 @@ const Footer = props => {
           <Grid item xs={12} md={2}>
             <List disablePadding>
               <ListItem disableGutters className={classes.logoContainerItem}>
-                <div className={classes.logoContainer}>
-                  <Link to="/" className={classes.link}>
-                    <Img
-                      fixed={data.logoImage.childImageSharp.fixed}
-                      className={classes.logoImage}
-                    />
-                  </Link>
+                <div
+                  className={classes.logoContainer}
+                  onClick={() => scrollTo('#header')}
+                >
+                  <Img
+                    fixed={data.logoImage.childImageSharp.fixed}
+                    className={classes.logoImage}
+                  />
                 </div>
               </ListItem>
               <ListItem disableGutters>

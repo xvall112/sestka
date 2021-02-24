@@ -35,7 +35,7 @@ const Header = () => {
 
   const data = useStaticQuery(query);
   return (
-    <div>
+    <div id="header">
       <AppBar position="static" className={classes.appBar}>
         <Container>
           <Grid
