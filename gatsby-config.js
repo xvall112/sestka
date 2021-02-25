@@ -10,7 +10,7 @@ module.exports = {
     author: `@sios`,
     siteUrl: 'https://rdsestka.cz',
     lang: 'cs',
-    image: '/src/assets/images/logo.png',
+    image: '/src/assets/images/ACCamera.jpg',
     keywords: [
       'prodej',
       'rodinny dum',
