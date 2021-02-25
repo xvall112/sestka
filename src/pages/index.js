@@ -24,7 +24,7 @@ const IndexPage = () => {
   return (
     <div className="container">
       <Main>
-        <SEO title="Moje Šestka" images={data.contentfulAsset.file.url} />
+        <SEO title="Moje Šestka" image={data.contentfulAsset.file.url} />
         <IndexView />
       </Main>
     </div>
