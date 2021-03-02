@@ -10,11 +10,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
-import InstagramIcon from '@material-ui/icons/Instagram';
+/* import InstagramIcon from '@material-ui/icons/Instagram'; */
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
-import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import HomeIcon from '@material-ui/icons/Home';
+/* import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid'; */
 import { contact } from '../../../../views/IndexView/data/index';
+import Badge from '@material-ui/core/Badge';
 
 const query = graphql`
   query {
@@ -65,7 +67,9 @@ const SideMenu = () => {
         onClick={handleDrawerOpen}
         type="button"
       >
-        <MenuIcon fontSize="large" />
+        <Badge badgeContent={6} color="secondary">
+          <HomeIcon />
+        </Badge>
       </IconButton>
       <Drawer open={open} anchor="right" onClick={handleDrawerClose}>
         <Grid container direction="column" justify="center" alignItems="center">
