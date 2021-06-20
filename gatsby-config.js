@@ -3,7 +3,7 @@ require('dotenv').config({
 });
 module.exports = {
   siteMetadata: {
-    siteTitle: `Rodinné domy Šestka`,
+    siteTitle: `Rodinné domy Příbram`,
     siteDescription:
       'Bydlení v přírodě s vlastním pozemkem a garáží. Minimalistické, moderní a pohodlné bydlení s naprostým soukromím! S docházkovou vzdáleností do centra Příbrami.',
     /* `Na prodej šest rodinných domů s vlastním pozemkem a garáží na Sázkách pár minut do Prahy vedle Příbrami`, */
