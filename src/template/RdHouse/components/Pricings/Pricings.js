@@ -68,9 +68,9 @@ const Pricings = props => {
             liftUp
             subtitle={
               contentfulRdHouse.stav.stav === ('volné' || 'rezervováno') &&
-              'se mění dle postupu prací, předpokládaná cena dokončeného domu 7 900 000 Kč - cena bude určena dle skutečně použitých materiálů a provedených prací.'
+              'se mění dle postupu prací, cena bude určena dle skutečně použitých materiálů a provedených prací.'
             }
-            priceComponent={
+            /*  priceComponent={
               <div>
                 <Typography component="span" variant="subtitle1">
                   Aktuální cena:
@@ -87,7 +87,7 @@ const Pricings = props => {
                   {contentfulRdHouse.stav.stav === 'volné' ? ' Kč s DPH' : ' '}
                 </Typography>
               </div>
-            }
+            } */
             /* features={
               contentfulRdHouse.stav.stav === ('volné' || 'rezervováno') && [
                 'pozemek',
@@ -116,7 +116,7 @@ const Pricings = props => {
                 }
                 onClick={() => scrollTo('#contact')}
               >
-                mám zájem
+                více info
               </Button>
             }
             disclaimer=""

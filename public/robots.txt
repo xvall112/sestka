@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://pensive-raman-03684b.netlify.app/sitemap.xml
-Host: https://pensive-raman-03684b.netlify.app

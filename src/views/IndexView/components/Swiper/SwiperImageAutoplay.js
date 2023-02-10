@@ -7,7 +7,9 @@ import SwiperCore, { Navigation, Autoplay, Pagination } from 'swiper';
 
 import Img from 'gatsby-image';
 
-import 'assets/scss/swiper/swiperNavigation.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 

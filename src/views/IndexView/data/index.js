@@ -11,7 +11,7 @@ export const promoNumbers = [
     color: colors.pink,
     icon: 'far fa-calendar-alt',
     title: 'Datum dokončení',
-    subtitle: ' 2021',
+    subtitle: ' 2023',
   },
   {
     color: colors.pink,

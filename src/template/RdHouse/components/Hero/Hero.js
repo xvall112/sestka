@@ -174,9 +174,9 @@ const Hero = props => {
                     subtitle={
                       contentfulRdHouse.stav.stav ===
                         ('volné' || 'rezervováno') &&
-                      'se mění dle postupu prací, předpokládaná cena dokončeného domu 7 900 000 Kč - cena bude určena dle skutečně použitých materiálů a provedených prací.'
+                      'se mění dle postupu prací, cena bude určena dle skutečně použitých materiálů a provedených prací.'
                     }
-                    priceComponent={
+                    /*   priceComponent={
                       <div>
                         <Typography component="span" variant="subtitle1">
                           Aktuální cena:
@@ -189,7 +189,7 @@ const Hero = props => {
                           Kč s DPH
                         </Typography>
                       </div>
-                    }
+                    } */
                     cta={
                       <Button
                         color="primary"
